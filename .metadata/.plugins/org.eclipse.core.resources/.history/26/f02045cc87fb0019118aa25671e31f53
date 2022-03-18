@@ -1,0 +1,51 @@
+package exercise_05;
+
+import java.util.Arrays;
+
+public class E2 {
+	public static String[] split(String s, String regex) {
+			 
+			  String str="";
+			 
+			  for(int i=0;i<s.length();i++){
+			 
+			   int index=s.indexOf(regex);
+			 
+			   if(index==-1){
+			 
+			    str=str+s.substring(0,s.length());
+			 
+			    break;
+			 
+			   }
+			   else{
+			 
+			    if(index!=0)
+			 
+			     str=str+s.substring(0,index)+",";
+			 
+			    str=str+s.substring(index,index+regex.length())+",";
+			 
+			    s=s.substring(index+regex.length(),s.length());
+			 
+			    i=0;
+			 
+			   }
+			 
+			  }
+			 
+			  String[] sub=str.split(",");
+			 
+			  return sub;
+		
+	}
+
+	public static void main(String[] args) {
+		String[] a=split("ab#12#453","#");
+		System.out.println(Arrays.toString(a));
+		 
+		
+
+	}
+
+}

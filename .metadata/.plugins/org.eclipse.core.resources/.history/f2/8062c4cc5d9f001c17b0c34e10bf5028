@@ -1,0 +1,36 @@
+package Nums_String;
+
+class isPalindrome {
+	static ListNode tmp;
+	public static boolean isPalindrome(ListNode head) {
+		tmp=head;
+		return check(head);
+	}
+	
+	private static boolean check(ListNode head) {
+		if(head==null) {
+			return true;
+		}
+		
+		boolean res=check(head.next)&&(tmp.val==head.val);
+		tmp=tmp.next;
+		return res;
+	}
+	
+    public static boolean result(int[] arr) {
+		ListNode head=new ListNode(arr[0]);
+		ListNode cur=head;
+		for(int i=1;i<arr.length;i++) {		
+			ListNode next=new ListNode(arr[i]);
+			cur.next=next;
+			cur=next;	
+		}
+		return isPalindrome(head);
+    }
+    
+	public static void main(String[] args) {
+		int[] arr= {1,3,2,1};
+
+		System.out.println(result(arr));
+	}
+}

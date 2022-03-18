@@ -1,0 +1,59 @@
+package exercise_03;
+
+import java.util.Scanner;
+
+public class E1 {
+
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		
+		String[] words = {"write","program","that"};
+		
+		char entrance = 'y';
+		while(entrance == 'y') {
+			int[] hashTable = new int[26];
+			String answer = answerToTheRiddle(words);
+			int lenth = answer.length();
+			for(int i = 0; i < lenth; i++) {
+				hashTable[answer.charAt(i) - 'a'] = 1;
+			}
+			
+			int number = 0;
+			int miss = 0;
+			while(number != lenth) {
+				System.out.print("(Guess) Enter a letter in word ");
+				for(int i = 0; i < lenth; i++) {
+					if(hashTable[answer.charAt(i) - 'a'] == 2)
+						System.out.printf("%c", answer.charAt(i));
+					else
+						System.out.printf("*");
+				}
+				System.out.printf(">");
+				String guess_string = input.next();
+				char guess = guess_string.charAt(0);
+				
+				if(hashTable[guess - 'a'] == 0) {
+					System.out.printf("	%c is not in the word\n", guess);
+					miss++;
+				}
+				else if(hashTable[guess - 'a'] == 1) {
+					hashTable[guess - 'a'] = 2;
+					number++;
+				}
+				else
+					System.out.printf("	%c is already in the word\n", guess);
+			}
+			System.out.printf("The word is %s. You missed %d time\n", answer, miss);
+			System.out.print("Do you want to guess another word? Enter y or n>");
+			String entrance_string = input.next();
+			entrance = entrance_string.charAt(0);
+		};
+		System.out.println("Bye!");
+	}
+	
+	public static String answerToTheRiddle(String[] words) {
+		int index = (int)(Math.random() * 12);
+		return words[index];
+	}
+}
+

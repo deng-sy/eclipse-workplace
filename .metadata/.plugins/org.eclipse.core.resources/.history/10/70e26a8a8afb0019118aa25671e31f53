@@ -1,0 +1,52 @@
+package exercise_05;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+
+public class E2 {
+	public static String[] split(String s, String regex) {
+			 
+		String str="";
+		int i=0,j=0;//i记录的是s的从第一个字符到第一个分隔符的长度
+		while(i<s.length())
+		{
+			if(s.substring(i, i+1).matches(regex)==true)
+			{
+				if(i!=0)
+				{
+				str+=s.substring(0,i);
+
+				}
+				j++;
+				str+=s.substring(i,i+1);
+				j++;
+				s=s.substring(i+1, s.length());
+			}
+			else
+			{
+				i++;
+			}
+			}
+		//split.add(s);
+		String[] sub=str.split(",");
+		return sub;
+		
+	}
+
+	public static void main(String[] args) {
+		String[] str=split("a?b?gf#e","[?#]");
+		for(String value:str)
+			System.out.println(value);
+		 
+		
+
+	}
+
+}
+
+
+
+
+
+	
+
