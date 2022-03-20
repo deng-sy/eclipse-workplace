@@ -3,6 +3,7 @@ package Tree;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Stack;
 
 //我们从二叉树的根节点root开始进行深度优先搜索。
 //在遍历中的每个节点处，我们输出D条短划线（其中D是该节点的深度），然后输出该
@@ -35,8 +36,38 @@ public class recoverFromPreorder {
         return list.get(0);
     }
 
+//    采用栈
+    public static TreeNode recoverFromPreorder2(String S){
+        Stack<TreeNode> stack=new Stack<>();
+        for(int i=0;i<S.length();){
+            int level=0;
+            while(S.charAt(i)=='-'){
+                level++;
+                i++;
+            }
+            int val=0;
+            while(i<S.length()&&S.charAt(i)!='-'){
+                val=val*10+(S.charAt(i)-'0');
+                i++;
+            }
+            while(stack.size()>level)
+                stack.pop();
+            TreeNode node=new TreeNode(val);
+            if(!stack.isEmpty()){
+                if(stack.peek().left==null)
+                    stack.peek().left=node;
+                else
+                    stack.peek().right=node;
+            }
+            stack.add(node);
+        }
+        while(stack.size()>1)
+            stack.pop();
+        return stack.pop();
+    }
+
     public static void main(String[] args) {
         String S="1-2--3---4-5--6---7";
-        TreeNode.show(recoverFromPreorder1(S));
+        TreeNode.show(recoverFromPreorder2(S));
     }
 }
