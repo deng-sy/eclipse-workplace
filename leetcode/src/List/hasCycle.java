@@ -1,7 +1,10 @@
 package List;
 
+import java.util.List;
+
 class hasCycle {
-	public static boolean hasCycle(ListNode head) {
+//	递归删除节点
+	public static boolean hasCycle1(ListNode head) {
 		if(head==null||head.next==null) {
 			return false;
 		}
@@ -13,9 +16,47 @@ class hasCycle {
 		ListNode nextNode=head.next;
 		
 		head.next=head;
-		return hasCycle(nextNode);
+		return hasCycle2(nextNode);
 	}
-	
+//	快慢指针
+	public static boolean hasCycle2(ListNode head){
+		if(head==null||head.next==null)
+			return false;
+		ListNode fast=head.next;
+		ListNode slow=head;
+		while(slow!=fast){
+			if(fast==null||fast.next==null)
+				return false;
+			slow=slow.next;
+			fast=fast.next.next;
+		}
+		return true;
+	}
+
+//	检测环并返回位置
+	public ListNode detectCycle(ListNode head) {
+		if (head == null) {
+			return null;
+		}
+		ListNode slow = head, fast = head;
+		while (fast != null) {
+			slow = slow.next;
+			if (fast.next != null) {
+				fast = fast.next.next;
+			} else {
+				return null;
+			}
+			if (fast == slow) {
+				ListNode ptr = head;
+				while (ptr != slow) {
+					ptr = ptr.next;
+					slow = slow.next;
+				}
+				return ptr;
+			}
+		}
+		return null;
+	}
 	public static void result(int[] arr,int pos) {
 		ListNode head=new ListNode(arr[0]);
 		ListNode cur=head;
@@ -34,7 +75,7 @@ class hasCycle {
 			}
 		}
 		System.out.println(cycleEnd.val);
-		System.out.println(hasCycle(head));
+		System.out.println(hasCycle1(head));
 	}
 	
 	

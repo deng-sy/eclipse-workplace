@@ -1948,7 +1948,7 @@
     <tags>View</tags>
     <tags>categoryTag:Amateras</tags>
   </descriptors>
-  <descriptors xmi:id="_JE7QmALmEeqmRpKZjFxhPw" elementId="net.java.amateras.uml.java.views.SampleView" label="Stack Trace Sample" iconURI="platform:/plugin/net.java.amateras.umleditor.java/icons/sample.gif" tooltip="" category="AmaterasUML" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+  <descriptors xmi:id="_JE7QmALmEeqmRpKZjFxhPw" elementId="net.java.amateras.uml.java.views.SampleView" label="Stack_Queue Trace Sample" iconURI="platform:/plugin/net.java.amateras.umleditor.java/icons/sample.gif" tooltip="" category="AmaterasUML" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
     <persistedState key="originalCompatibilityViewClass" value="net.java.amateras.uml.java.views.SampleView"/>
     <persistedState key="originalCompatibilityViewBundle" value="net.java.amateras.umleditor.java"/>
     <tags>View</tags>

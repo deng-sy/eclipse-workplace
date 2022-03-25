@@ -233,7 +233,7 @@ class TreeNode {
 
     //    层序遍历(广度优先非递归解决)
     public static List<List<Integer>> levelOrderBFS(TreeNode root) {
-        List<List<Integer>> ret = new ArrayList<List<Integer>>();
+        List<List<Integer>> ret = new ArrayList<>();
         if (root == null) {
             return ret;
         }

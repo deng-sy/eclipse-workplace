@@ -2,6 +2,7 @@ package List;
 
 import List.ListNode;
 
+import java.util.List;
 import java.util.Stack;
 
 //反转链表
@@ -9,6 +10,8 @@ class reverseList {
 
 //	双链表
     public static ListNode reverseList1(ListNode head) {
+    	if(head==null)
+    		return null;
         ListNode prev = null;
         ListNode curr = head;
         while (curr != null) {
@@ -79,8 +82,10 @@ class reverseList {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		int[] arr= {4,5,1,9};	
-		System.out.println(result(arr));
+		int[] arr= {4,5,1,9};
+		ListNode head=null;
+		System.out.println(ListNode.node2list(reverseList1(head)));
+//		System.out.println(result(arr));
 		
 	}
 

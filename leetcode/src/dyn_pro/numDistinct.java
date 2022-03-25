@@ -23,7 +23,7 @@ public class numDistinct {
     }
 
     public static void main(String[] args) {
-        String s="babag",t="bag";
+        String s="rabbbit",t="rabbit";
         System.out.println(numDistinct(s,t));
     }
 

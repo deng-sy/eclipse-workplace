@@ -94,8 +94,9 @@ class isPalindrome {
     }
     
 	public static void main(String[] args) {
-		int[] arr= {1,3,2,1};
-
-		System.out.println(result(arr));
+//		int[] arr= {1,3,2,1};
+////
+////		System.out.println(result(arr));
+		System.out.println(Integer.MAX_VALUE);
 	}
 }

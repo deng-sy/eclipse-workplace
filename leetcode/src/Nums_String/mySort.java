@@ -86,12 +86,10 @@ public class mySort {
                     swap(array,j,++i);
 //                    System.out.print(array[i]+" ");
                 }
-
-
             }
             array[start]=array[i];
             array[i]=key;
-            quickSort(array,start,i-1);
+            quickSort(array,start,i);
             quickSort(array,i+1,end);
         }
 
@@ -327,12 +325,15 @@ public class mySort {
     }
 
     public static void main(String[] args) {
-        int[] array=new int[20];
-        Random random=new Random();
-        for(int i=0;i<array.length;i++)
-            array[i]=random.nextInt(1000)-500;
-        System.out.println("ÅÅĞòÇ°£º "+Arrays.toString(array));
-        int tmp[]=bitmapSort(array);
-        System.out.print("ÅÅĞòºó£º "+Arrays.toString(tmp));
+//        int[] array=new int[20];
+////        Random random=new Random();
+////        for(int i=0;i<array.length;i++)
+////            array[i]=random.nextInt(1000)-500;
+////        System.out.println("ÅÅĞòÇ°£º "+Arrays.toString(array));
+////        int tmp[]=bitmapSort(array);
+////        System.out.print("ÅÅĞòºó£º "+Arrays.toString(tmp));
+        int[]nums={5,1,1,2,0,0};
+        quickSort(nums,0,nums.length);
+        System.out.println(Arrays.toString(nums));
     }
 }
