@@ -25,6 +25,10 @@ class MedianFinder {
         }
     }
 
+    public void deleteNum(int num){
+
+    }
+
     public double findMedian() {
         if (queMin.size() > queMax.size()) {
             return queMin.peek();
@@ -38,7 +42,7 @@ class MedianFinder {
         medianFinder.addNum(2);
         medianFinder.addNum(3);
         medianFinder.addNum(4);
-        System.out.println(medianFinder.queMax);
+        System.out.println(medianFinder.findMedian());
     }
 }
 

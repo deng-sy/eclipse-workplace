@@ -190,7 +190,7 @@ class TreeNode {
         if(root==null){
             return;
         }
-        Stack<TreeNode> s1=new Stack<>();//防止访问的节点
+        Stack<TreeNode> s1=new Stack<>();//放置访问的节点
         Stack<TreeNode> s2=new Stack<>();//放置要打印的节点
         s1.push(root);
         while(!s1.isEmpty()){
@@ -298,7 +298,7 @@ class TreeNode {
         }
     }
 
-    //    DFS深度优先递归
+    //    DFS深度优先递归==前序遍历
     public static void treeDFS2(TreeNode root){
         if(root==null){
             return;

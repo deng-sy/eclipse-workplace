@@ -16,7 +16,7 @@ class hasCycle {
 		ListNode nextNode=head.next;
 		
 		head.next=head;
-		return hasCycle2(nextNode);
+		return hasCycle1(nextNode);
 	}
 //	¿ìÂýÖ¸Õë
 	public static boolean hasCycle2(ListNode head){
@@ -83,7 +83,8 @@ class hasCycle {
 	public static void main(String[] args) {
 		int[] arr= {0,1,2,3,4,5};
 		int pos=2;
-		result(arr,pos);
+
+//		result(arr,pos);
 //		
 //		ListNode a=new ListNode(1);
 //		ListNode b=new ListNode(2);

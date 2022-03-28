@@ -24,17 +24,10 @@ public class deleteDuplicates {
     }
 
     public static void main(String[] args) {
-//        int[]nums={1,1,2,2,3,3,4,4,5};
-//        ListNode head=new ListNode(nums);
-//        System.out.println(ListNode.node2list(deleteDuplicates(head)));
-        ListNode dummy=new ListNode(0);
-        ListNode head=new ListNode(1);
-        ListNode cur=new ListNode(2);
-        dummy.next=head;
-        head.next=cur;
-        ListNode pre=dummy;
-        pre.next=head.next;
-        System.out.println(dummy.next.val);
+        int[]nums={1,1,2,2,3,3,4,4,5};
+        ListNode head=new ListNode(nums);
+        System.out.println(ListNode.node2list(deleteDuplicates(head)));
+
 
 
 

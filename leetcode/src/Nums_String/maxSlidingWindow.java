@@ -2,6 +2,7 @@ package Nums_String;
 
 import java.lang.reflect.Array;
 import java.util.*;
+//滑动窗口最大值
 
 public class maxSlidingWindow {
 //    优先队列
@@ -51,7 +52,7 @@ public class maxSlidingWindow {
 
     public static void main(String[] args) {
         int[]nums={1,3,-1,-3,5,3,6,7};
-        System.out.println(Arrays.toString(maxSlidingWindow2(nums,3)));
+        System.out.println(Arrays.toString(maxSlidingWindow1(nums,3)));
 //        Deque<Integer>deque=new LinkedList<>();
 //        deque.offerLast(1);
 //        deque.offerLast(2);

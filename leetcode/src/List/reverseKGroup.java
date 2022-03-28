@@ -2,9 +2,9 @@ package List;
 
 public class reverseKGroup {
     public static ListNode reverseKGroup(ListNode head, int k) {
-        ListNode hair = new ListNode(0);
-        hair.next = head;
-        ListNode pre = hair;
+        ListNode dummy = new ListNode(0);
+        dummy.next = head;
+        ListNode pre = dummy;
 
         while (head != null) {
             ListNode tail = pre;
@@ -12,7 +12,7 @@ public class reverseKGroup {
             for (int i = 0; i < k; ++i) {
                 tail = tail.next;
                 if (tail == null) {
-                    return hair.next;
+                    return dummy.next;
                 }
             }
             ListNode nex = tail.next;
@@ -26,7 +26,7 @@ public class reverseKGroup {
             head = tail.next;
         }
 
-        return hair.next;
+        return dummy.next;
     }
 
     private static  ListNode[] myReverse(ListNode head, ListNode tail) {

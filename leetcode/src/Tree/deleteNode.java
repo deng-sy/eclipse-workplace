@@ -4,7 +4,7 @@ public class deleteNode {
     /*
     One step right and then always left
     */
-    public int successor(TreeNode root) {
+    public static int successor(TreeNode root) {
         root = root.right;
         while (root.left != null) root = root.left;
         return root.val;
@@ -13,13 +13,13 @@ public class deleteNode {
     /*
     One step left and then always right
     */
-    public int predecessor(TreeNode root) {
+    public static int predecessor(TreeNode root) {
         root = root.left;
         while (root.right != null) root = root.right;
         return root.val;
     }
 
-    public TreeNode deleteNode(TreeNode root, int key) {
+    public static TreeNode deleteNode(TreeNode root, int key) {
         if (root == null) return null;
 
         // delete from the right subtree
@@ -42,6 +42,13 @@ public class deleteNode {
             }
         }
         return root;
+    }
+
+    public static void main(String[] args) {
+        TreeNode root=TreeNode.constructTree(new Integer[]{5,3,6,2,4,null,7});
+        TreeNode.show(root);
+        TreeNode.show(deleteNode(root,3));
+
     }
 }
 
