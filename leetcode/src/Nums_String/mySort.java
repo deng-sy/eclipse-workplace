@@ -109,6 +109,23 @@ public class mySort {
 //            System.out.print(Arrays.toString(array));
         }
     }
+
+
+
+
+//    归并排序非递归实现
+    public static void mergeSort2(int[] array){
+        int i=1;
+        int[] tmp=new int[array.length];
+        while(i<array.length){
+            for(int j=0;j+1<array.length;j+=2*i){
+//                先两两合并，再四个四个合并。。。
+                merge(array,j,j+i-1,Math.min(j+2*i-1,array.length-1),tmp);
+            }
+            i=i<<1;
+        }
+    }
+
     public static void merge(int[] data,int left,int center,int right,int[] tmp){
         int tmpindex=left;
         int _left=left;
@@ -129,21 +146,6 @@ public class mySort {
 
 
     }
-
-
-//    归并排序非递归实现
-    public static void mergeSort2(int[] array){
-        int i=1;
-        int[] tmp=new int[array.length];
-        while(i<array.length){
-            for(int j=0;j+1<array.length;j+=2*i){
-//                先两两合并，再四个四个合并。。。
-                merge(array,j,j+i-1,Math.min(j+2*i-1,array.length-1),tmp);
-            }
-            i=i<<1;
-        }
-    }
-
 
 //    堆排序(大顶堆)
     public static void heapSort(int []array){

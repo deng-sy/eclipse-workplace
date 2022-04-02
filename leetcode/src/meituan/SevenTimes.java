@@ -35,7 +35,6 @@ public class SevenTimes {
                 dp[i][j]=Math.max(dp[i][j],dp[i-1][Math.abs(j-nums[i])%7]+nums[i]);
 
             }
-            System.out.println(Arrays.toString(dp[n]));
 
 
         }

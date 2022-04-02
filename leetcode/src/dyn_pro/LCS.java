@@ -15,7 +15,6 @@ public class LCS {
                     }
                 }else
                     dp[j+1]=0;
-
             }
         }
         return s1.substring(maxLast-maxLength+1,maxLast+1);

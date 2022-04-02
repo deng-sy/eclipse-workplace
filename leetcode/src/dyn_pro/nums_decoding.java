@@ -47,7 +47,7 @@ public class nums_decoding {
             lastLast=last;
             last=cur;
 
-            System.out.println(lastLast+" "+last+" "+cur);
+//            System.out.println(lastLast+" "+last+" "+cur);
         }
 //        return dp[s.length()];
         return last;

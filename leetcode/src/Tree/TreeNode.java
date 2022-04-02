@@ -16,13 +16,7 @@ class TreeNode {
     int val;
     TreeNode left;
     TreeNode right;
-    TreeNode() {}
     TreeNode(int val){this.val=val;}
-    TreeNode(int val,TreeNode left,TreeNode right){
-        this.val=val;
-        this.left=left;
-        this.right=right;
-    }
 
 //    数组构建树
     public static TreeNode constructTree(Integer[] nums){
@@ -281,6 +275,8 @@ class TreeNode {
         levelHelper(list, root.left, level + 1);
         levelHelper(list, root.right, level + 1);
     }
+
+
     //    DFS深度优先非递归
     public static void treeDFS1(TreeNode root){
         Stack<TreeNode> stack=new Stack<>();

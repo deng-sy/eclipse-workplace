@@ -22,6 +22,7 @@ public class numDistinct {
         return dp[tLength][sLength];
     }
 
+
     public static void main(String[] args) {
         String s="rabbbit",t="rabbit";
         System.out.println(numDistinct(s,t));

@@ -95,10 +95,6 @@ class DualHeap {
         }
     }
 
-    public static void main(String[] args) {
-        medianSlidingWindow med=new medianSlidingWindow();
-        System.out.println(Arrays.toString(med.medianSlidingWindow(new int[]{1,3,-1,-3,5,3,6,7},3)));
-    }
 }
 public class Medium {
     public double[] medianSlidingWindow(int[] nums, int k) {

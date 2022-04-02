@@ -1,7 +1,6 @@
 package List;
-
-import java.util.Arrays;
-
+import java.util.*;
+//合并两个有序链表
 public class mergeLists {
 //    递归
     public static ListNode mergeLists1(ListNode l1,ListNode l2){
