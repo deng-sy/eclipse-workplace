@@ -1,4 +1,4 @@
-package Tree;
+package zijie;
 
 import java.util.*;
 
@@ -171,28 +171,6 @@ class TreeNode {
             }
         }
     }
-    //    采用Morris中序遍历节省空间
-    public static void MorrisInorder(TreeNode root){
-        TreeNode cur = root, pre ;
-        while (cur != null) {
-            pre = cur.left;
-            if (cur.left != null) {
-                while(pre.right != null && pre.right != cur)
-                    pre = pre.right;
-                if(pre.right == null) {
-                    pre.right = cur;
-                    cur = cur.left;
-                    continue;
-                }else
-                    pre.right = null;
-            }
-            System.out.print(cur.val+" ");
-            cur = cur.right;
-        }
-
-
-
-    }
 
     //    后序遍历递归
     public static void aftOrder1(TreeNode root){
@@ -362,7 +340,7 @@ class TreeNode {
         int rightDepth=depth(root.right);
         return Math.max(leftDepth,rightDepth)+1;
     }
-    private static void printLevel(TreeNode root,int level){
+    private static void printLevel(TreeNode root, int level){
         if(root==null){
             return;
         }
@@ -386,7 +364,7 @@ class TreeNode {
         preOrder1(root);
         System.out.println();
         System.out.print("中序遍历：");
-        MorrisInorder(root);
+        midOrder1(root);
         System.out.println();
         System.out.print("后序遍历：");
         aftOrder1(root);

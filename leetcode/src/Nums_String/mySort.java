@@ -10,7 +10,7 @@ import java.util.Random;
 //排序
 public class mySort {
 
-//    冒泡排序
+//    冒泡排序:相邻两两比较交换
     public static void bubbleSort(int array[]){
         int length=array.length;
         for(int i=0;i<length-1;i++){
@@ -22,7 +22,7 @@ public class mySort {
         }
     }
 
-//    选择排序
+//    选择排序：每次选择最小值与当前的交换
     public static void selectSort(int[] array){
         for(int i=0;i<array.length;i++){
             int index=i;
@@ -37,7 +37,7 @@ public class mySort {
         }
     }
 
-//    直接插入排序
+//    直接插入排序：类似于一张张地抽牌，每次把新数插入合适位置
     public static void insertSort(int[] array){
         for(int i=0;i<array.length;i++){
             int j=i;
@@ -53,7 +53,7 @@ public class mySort {
         }
     }
 
-//    二分插入排序
+//    二分插入排序：利用了已排序元素有序的特点，直接插入的基础上通过二分查找找到要插入的位置
     public static void halfSort(int array[]){
         for(int i=1;i<array.length;i++){
             if(array[i-1]>array[i]){
@@ -76,7 +76,7 @@ public class mySort {
         }
     }
 
-//    快速排序
+//    快速排序：对冒泡排序的改进，每次选择基准并划分为两部分，小于它的往前挪，大于他的往后挪
     public static void quickSort(int array[],int start,int end){
         if(start<end){
             int key=array[start];
@@ -146,6 +146,7 @@ public class mySort {
 
 
     }
+
 
 //    堆排序(大顶堆)
     public static void heapSort(int []array){
@@ -298,7 +299,7 @@ public class mySort {
     }
 
 
-//    希尔排序(缩小增量排序)
+//    希尔排序(缩小增量排序)，对直接插入排序的改进，不稳定
     public static void shellSort(int []array){
         int length=array.length;
         int step=length>>1;

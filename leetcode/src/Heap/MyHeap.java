@@ -139,7 +139,8 @@ public class MyHeap<E> {
         int[] nums={10,4,8,3,5,1};
         System.out.print("数组原始值为:");
         System.out.println(Arrays.toString(nums));
-        MyHeap myHeap=new MyHeap(10, new Comparator<Integer>() {
+        MyHeap myHeap;
+        myHeap = new MyHeap(10, new Comparator<Integer>() {
             @Override
             public int compare(Integer o1, Integer o2) {
                 return (o1-o2>0)?1:-1;

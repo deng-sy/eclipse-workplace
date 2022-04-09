@@ -23,16 +23,17 @@ public class SevenTimes {
 
     public static int dym_pro(int n,int[]nums){
 //      dp[i][j], 记录对7取模为j的前i个数的和的最大值
-        int[][]dp=new int[n+1][7];
+        int mod=7;
+        int[][]dp=new int[n+1][mod];
         for(int i=0;i<=n;i++)
-            for(int j=0;j<7;j++)
+            for(int j=0;j<mod;j++)
                 dp[i][j]=Integer.MIN_VALUE;
         dp[0][0]=0;
 
         for(int i=1;i<=n;i++){
-            for(int j=0;j<7;j++){
+            for(int j=0;j<mod;j++){
                 dp[i][j]=Math.max(dp[i][j],dp[i-1][j]);
-                dp[i][j]=Math.max(dp[i][j],dp[i-1][Math.abs(j-nums[i])%7]+nums[i]);
+                dp[i][j]=Math.max(dp[i][j],dp[i-1][((j-nums[i])%7+7)%7]+nums[i]);
 
             }
 

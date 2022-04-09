@@ -45,6 +45,7 @@ public class verticalTraversal {
     public static void main(String[] args) {
         Integer[]nums={1,2,3,4,5,6,7};
         TreeNode root=TreeNode.constructTree(nums);
+        TreeNode.show(root);
         System.out.println(verticalTraversal(root));
     }
 }
