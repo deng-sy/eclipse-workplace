@@ -1,6 +1,5 @@
 package List;
 
-import java.util.List;
 
 class hasCycle {
 //	µÝ¹éÉ¾³ý½Úµã

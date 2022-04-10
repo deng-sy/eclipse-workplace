@@ -1,6 +1,5 @@
 package List;
 
-import java.util.List;
 
 public class getKthFromEnd {
     ListNode res;
@@ -17,7 +16,4 @@ public class getKthFromEnd {
     }
 
 
-    public static void main(String[] args) {
-
-    }
 }
