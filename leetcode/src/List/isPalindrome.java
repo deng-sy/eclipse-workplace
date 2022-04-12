@@ -16,7 +16,6 @@ class isPalindrome {
 		if(head==null) {
 			return true;
 		}
-		
 		boolean res=check(head.next)&&(tmp.val==head.val);
 		tmp=tmp.next;
 		return res;

@@ -7,7 +7,6 @@ class hasCycle {
 		if(head==null||head.next==null) {
 			return false;
 		}
-		
 		if(head.next==head) {
 			return true;
 			

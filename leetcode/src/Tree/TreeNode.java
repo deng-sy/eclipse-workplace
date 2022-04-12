@@ -149,6 +149,37 @@ class TreeNode {
             }
         }
     }
+
+//    Morris前序遍历
+    public static void MorrisPreorder(TreeNode root){
+        TreeNode cur = root;
+        TreeNode mostright;
+        while (cur != null) {
+            mostright = cur.left;// 当前节点的左孩子
+            // 当前节点的左子树存在，则将mostright定位到该左子树的最右节点
+            if (mostright != null) {
+                while (mostright.right != null && mostright.right != cur) {
+                    mostright = mostright.right;
+                }
+                // 如果左子树最右节点的right指针为空，让其指向当前节点，cur往左走
+                if (mostright.right == null) {
+                    mostright.right = cur;
+                    // 1. cur 要走向左子树之前先打印根节点
+                    System.out.print(cur.val + " ");
+                    cur = cur.left;
+                    continue;// 继续访问左子树
+                } else {
+                    // 说明mostright的right指向了cur，重新置为空
+                    mostright.right = null;
+                }
+            } else {
+                // 2. 左子树为空时打印根节点
+                System.out.print(cur.val + " ");
+            }
+            // 当前节点的左子树不存在或已经访问过，cur往右走
+            cur = cur.right;
+        }
+    }
     //    中序遍历递归
     public static void midOrder1(TreeNode root){
         if(root==null){return;}
@@ -173,25 +204,22 @@ class TreeNode {
     }
     //    采用Morris中序遍历节省空间
     public static void MorrisInorder(TreeNode root){
-        TreeNode cur = root, pre ;
+        TreeNode cur = root, mostright ;
         while (cur != null) {
-            pre = cur.left;
+            mostright = cur.left;
             if (cur.left != null) {
-                while(pre.right != null && pre.right != cur)
-                    pre = pre.right;
-                if(pre.right == null) {
-                    pre.right = cur;
+                while(mostright.right != null && mostright.right != cur)
+                    mostright = mostright.right;
+                if(mostright.right == null) {
+                    mostright.right = cur;
                     cur = cur.left;
                     continue;
                 }else
-                    pre.right = null;
+                    mostright.right = null;
             }
             System.out.print(cur.val+" ");
             cur = cur.right;
         }
-
-
-
     }
 
     //    后序遍历递归
@@ -383,7 +411,7 @@ class TreeNode {
 
         TreeNode.show(root);
         System.out.print("前序遍历：");
-        preOrder1(root);
+        MorrisPreorder(root);
         System.out.println();
         System.out.print("中序遍历：");
         MorrisInorder(root);
