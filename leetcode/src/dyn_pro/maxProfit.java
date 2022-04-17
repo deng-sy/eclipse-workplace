@@ -19,8 +19,6 @@ public class maxProfit {
 //        }
 //        return dp[2][prices.length-1];
 //
-
-
         int buy1=-prices[0],sell1=0,buy2=-prices[0],sell2=0;
 //        定义四种状态：第一次买入，第一次卖出，第二次买入，第二次卖出
         for(int i=1;i<prices.length;i++){

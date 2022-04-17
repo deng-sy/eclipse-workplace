@@ -41,7 +41,7 @@ public class nums_decoding {
             if(chars[i]!='0')
 //                dp[i]+=dp[i-1];
                 cur=last;
-            if(i>0&&(chars[i-1]=='1'||(chars[i-1]=='2'&&chars[i-1]<='6')))
+            if(i>0&&(chars[i-1]=='1'||(chars[i-1]=='2'&&chars[i]<='6')))
 //                dp[i]+=dp[i-2];
                 cur+=lastLast;
             lastLast=last;
@@ -54,7 +54,7 @@ public class nums_decoding {
     }
 
     public static void main(String[] arg3) {
-        String s="162";
+        String s="222";
         System.out.println(nums_decoding2(s));
 
     }

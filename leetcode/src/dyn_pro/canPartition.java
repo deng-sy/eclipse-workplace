@@ -1,7 +1,6 @@
 package dyn_pro;
-
-import java.util.Arrays;
-
+import java.util.*;
+//将数组拆分为等和的两部分
 public class canPartition {
     public static boolean canPartition1(int[]nums){
         int sum=0;

@@ -3,7 +3,7 @@ package dyn_pro;
 public class maxSumDivThree {
     public static int maxSumDivThree(int[] nums) {
         int n=nums.length;
-        int[][]dp=new int[n+1][3];
+        int[][]dp=new int[n+1][3];//dp[i][j]表示前i个元素中被三除余j的最大元素和
         for(int i=0;i<=n;i++){
             for(int j=0;j<3;j++){
                 dp[i][j]=Integer.MIN_VALUE;

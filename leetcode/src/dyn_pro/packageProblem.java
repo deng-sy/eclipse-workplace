@@ -4,7 +4,7 @@ import java.util.*;
 //这些物品的重量总和不能超过背包容量，且价值总和最大。
 public class packageProblem {
     public static int packageProblem1(int maxWeight,int[]weights,int[]values){
-        int[]dp=new int[maxWeight+1];
+        int[]dp=new int[maxWeight+1];//dp[i]表示装入最大重量为i能获得的最大价值
         for(int i=1;i<=values.length;i++){
             for(int j=maxWeight;j>=1;j--){
                 if(j>=weights[i-1])

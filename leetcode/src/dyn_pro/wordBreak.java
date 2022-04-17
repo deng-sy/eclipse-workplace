@@ -12,6 +12,7 @@ public class wordBreak {
         for(int i=1;i<=s.length();i++){
             for(int j=0;j<i;j++){
                 if(dp[j]&&dictSet.contains(s.substring(j,i))){
+                    System.out.print(s.substring(j,i)+" ");
                     dp[i]=true;
                     break;
                 }

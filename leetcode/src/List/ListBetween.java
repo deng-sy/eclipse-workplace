@@ -40,7 +40,7 @@ public class ListBetween {
     }
 
     public static void main(String[] args) {
-        int[]nums={1,2,3,4,5};
+        int[]nums={1,2,3,10,5};
         System.out.println(ListNode.node2list(reverseBetween(new ListNode(nums),2,4)));
     }
 }
