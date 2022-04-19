@@ -6,14 +6,12 @@ import java.util.Collections;
 import java.util.List;
 
 public class threeSum {
-
 //    回溯 该方法复杂度太高会超时
     public static List<List<Integer>> threeSum1(int[] nums) {
         Arrays.sort(nums);
         List<List<Integer>>res=new ArrayList();
         dfs(res,new ArrayList(),nums,0,0);
         return res;
-
     }
     private static void dfs(List<List<Integer>>res,List<Integer>tmp,int[]nums,int sum,int start){
         if(tmp.size()==3&&sum==0){
@@ -32,7 +30,7 @@ public class threeSum {
 public static List<List<Integer>> threeSum2(int[] nums) {
     int n = nums.length;
     Arrays.sort(nums);
-    List<List<Integer>> ans = new ArrayList<List<Integer>>();
+    List<List<Integer>> ans = new ArrayList<>();
     // 枚举 a
     for (int first = 0; first < n; ++first) {
         // 需要和上一次枚举的数不相同
@@ -58,7 +56,7 @@ public static List<List<Integer>> threeSum2(int[] nums) {
                 break;
             }
             if (nums[second] + nums[third] == target) {
-                List<Integer> list = new ArrayList<Integer>();
+                List<Integer> list = new ArrayList<>();
                 list.add(nums[first]);
                 list.add(nums[second]);
                 list.add(nums[third]);
@@ -68,9 +66,7 @@ public static List<List<Integer>> threeSum2(int[] nums) {
     }
     return ans;
 }
-
-
     public static void main(String[] args) {
-        System.out.println(threeSum2(new int[]{-1,0,1,2,-1,-4}));
+        System.out.println(threeSum1(new int[]{-1,0,1,2,-1,-4}));
     }
 }

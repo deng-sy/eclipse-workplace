@@ -14,7 +14,7 @@ public class num_combination {
 
     private static void dfs(List<List<Integer>>res,List<Integer>list,int k,int start,int n){
         if(list.size()==k){
-            if(list.size()==k&&n==0)
+            if(n == 0)
                 res.add(new ArrayList<>(list));
             return;
         }

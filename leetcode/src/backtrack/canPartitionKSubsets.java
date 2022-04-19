@@ -20,7 +20,6 @@ public class canPartitionKSubsets {
                 if(size[i]!=size[i-1])
                     return false;
             }
-
             return true;
         }
 

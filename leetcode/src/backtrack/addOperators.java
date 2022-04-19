@@ -14,7 +14,7 @@ public class addOperators {
         this.n=num.length();
         this.num=num;
         this.target=target;
-        this.ans=new ArrayList<String>();
+        this.ans= new ArrayList<>();
         StringBuffer expr=new StringBuffer();
         backtrack(expr,0,0,0);
         return ans;
@@ -29,10 +29,11 @@ public class addOperators {
         }
         int signIdx=expr.length();
         if(idx>0)
-            expr.append(0);
+            expr.append('#');
         long val=0;
         for(int j=idx;j<n&&(j==idx||num.charAt(idx)!='0');j++){
             val=val*10+num.charAt(j)-'0';
+            System.out.println(idx+" "+j);
             expr.append(num.charAt(j));
             if(idx==0)
                 backtrack(expr,j+1,val,val);
@@ -49,10 +50,11 @@ public class addOperators {
     }
 
     public static void main(String[] args) {
-        String num="239";
-        int target=21;
+        String num="209";
+        int target=78;
         addOperators solution=new addOperators();
         System.out.println(solution.addOperators(num,target));
+
     }
 
 }

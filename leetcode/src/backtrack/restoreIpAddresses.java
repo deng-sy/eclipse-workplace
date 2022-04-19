@@ -22,7 +22,6 @@ public class restoreIpAddresses {
         if(segId==4){
             System.out.println(Arrays.toString(segments));
             if(segStart==len){
-
                 StringBuffer sb=new StringBuffer();
                 for(int i=0;i<4;i++){
                     sb.append(segments[i]);

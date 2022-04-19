@@ -7,7 +7,6 @@ import java.util.*;
 public class calcEquation {
 
 //    法一：深度优先
-
     public double[] calcEquation1(List<List<String>> equations, double[] values, List<List<String>> queries) {
         int nvars=0;
         Map<String,Integer>vars=new HashMap<>();
