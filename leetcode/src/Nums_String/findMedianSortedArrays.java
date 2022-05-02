@@ -32,6 +32,7 @@ public class findMedianSortedArrays {
         int index1 = 0, index2 = 0;
 
         while (true) {
+            System.out.print(index1+" "+index2+" "+k+" ");
             // ±ß½çÇé¿ö
             if (index1 == length1) {
                 return nums2[index2 + k - 1];
@@ -55,13 +56,14 @@ public class findMedianSortedArrays {
                 k -= (newIndex2 - index2 + 1);
                 index2 = newIndex2 + 1;
             }
+            System.out.println(newIndex1+" "+newIndex2);
+
+
         }
     }
 
-
-
     public static void main(String[] args) {
-        int[]nums1={1,10},nums2={2,12};
+        int[]nums1={1,2,3,4},nums2={5,6,7,8,9};
         System.out.println(findMedianSortedArrays(nums1,nums2));
     }
 }

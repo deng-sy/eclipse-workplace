@@ -1,4 +1,7 @@
 package Nums_String;
+
+import java.util.Arrays;
+
 //给你一个整数数组 nums ，找到其中最长严格递增子序列的长度。
 public class lengthOfLIS {
     public static int lengthOfLIS(int[]nums){
@@ -23,6 +26,12 @@ public class lengthOfLIS {
                 d[pos+1]=nums[i];
             }
         }
+        System.out.println(Arrays.toString(d));
         return len;
+    }
+
+    public static void main(String[] args) {
+        int[]nums={1,2,4,-3,0,3,4,5,6};
+        System.out.println(lengthOfLIS(nums));
     }
 }

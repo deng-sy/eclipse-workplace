@@ -1,5 +1,7 @@
 package Nums_String;
 
+import java.util.Arrays;
+
 public class nextPermutation {
     public static void nextPermutation(int[]nums){
         int i=nums.length-2;
@@ -27,5 +29,11 @@ public class nextPermutation {
             left++;
             right--;
         }
+    }
+
+    public static void main(String[] args) {
+        int[]nums={1,2,3};
+        nextPermutation(nums);
+        System.out.println(Arrays.toString(nums));
     }
 }

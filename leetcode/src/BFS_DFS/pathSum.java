@@ -27,7 +27,7 @@ public class pathSum {
     }
 
     public static void main(String[] args) {
-        TreeNode root=TreeNode.constructTree(new Integer[]{1,2});
-        System.out.println(pathSum(root,1));
+        TreeNode root=TreeNode.constructTree(new Integer[]{1,2,3});
+        System.out.println(pathSum(root,4));
     }
 }

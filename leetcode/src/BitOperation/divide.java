@@ -81,7 +81,7 @@ public class divide {
     }
 
     public static void main(String[] args) {
-        System.out.println(divide3(10,-3));
+        System.out.println(divide1(1,1));
 //        System.out.println(substraction(10,2));
     }
 }

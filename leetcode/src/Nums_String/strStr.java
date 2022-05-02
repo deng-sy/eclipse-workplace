@@ -18,20 +18,20 @@ class strStr {
 
 
         int[] next=new int[n+1];
-        
+
 //        构建next数组
         for(int i=2,j=0;i<=n;i++){
             while(j>0&&needle[i]!=needle[j+1]){
                 j=next[j];
             }
-
-           
             if(needle[i]==needle[j+1]){
                 j++;
             }
             next[i]=j;
-           
         }
+        StringBuilder sb=new StringBuilder(hh);
+        sb.append(hh);
+
 
 
 
@@ -57,7 +57,7 @@ class strStr {
     }
     
     public static void main(String[] args) {
-    	int result=strStr("abcababcabc", "babbabbabbabbab");
+    	int result=strStr("abcababcabc", "021Abc9Abc1");
 		System.out.println(result);
 	}
 }

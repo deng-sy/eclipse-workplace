@@ -25,9 +25,6 @@ class MedianFinder {
         }
     }
 
-    public void deleteNum(int num){
-
-    }
 
     public double findMedian() {
         if (queMin.size() > queMax.size()) {

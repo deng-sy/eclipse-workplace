@@ -1,7 +1,5 @@
 package meituan;
 
-import Stack_Queue.medianSlidingWindow;
-
 import java.util.*;
 
 //小团很喜欢中位数。现在给定一个序列，若其长度为奇数，那么其中位数是将序列中的数从小到大排序后位于正中间位置的数；若其长度为偶数，那么其中位数是将序列中的数从小到大排序后位于最中间的两个数的平均值。

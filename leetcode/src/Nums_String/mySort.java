@@ -2,10 +2,7 @@ package Nums_String;
 
 
 import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 
 //ÅÅÐò
 public class mySort {
@@ -89,6 +86,7 @@ public class mySort {
             }
             array[start]=array[i];
             array[i]=key;
+            System.out.println(Arrays.toString(array));
             quickSort(array,start,i);
             quickSort(array,i+1,end);
         }
@@ -143,9 +141,6 @@ public class mySort {
         }
     }
 
-
-
-
 //    ¶ÑÅÅÐò(´ó¶¥¶Ñ)
     public static void heapSort(int []array){
         int length=array.length;
@@ -175,6 +170,26 @@ public class mySort {
     private static void buildMaxHeap(int[] array,int heapSize){
         for(int i=(heapSize)>>1-1;i>=0;i--){
             maxHeapfy(array,i,heapSize);
+        }
+    }
+    //    ¹¹½¨Ð¡¶¥¶Ñ
+    private static void buildMinHeap(int[] array,int heapSize){
+        for(int i=(heapSize)>>1-1;i>=0;i--){
+            minHeapfy(array,i,heapSize);
+        }
+    }
+    public static void minHeapfy(int[] array,int i,int heapSize){
+        int left=i*2+1,right=i*2+2;
+        int smallest=i;
+        if(left<heapSize&&array[left]<array[smallest]){
+            smallest=left;
+        }
+        if(right<heapSize&&array[right]<array[smallest]){
+            smallest=right;
+        }
+        if(smallest!=i){
+            swap(array,smallest,i);
+            minHeapfy(array,smallest,heapSize);
         }
     }
 
@@ -333,8 +348,19 @@ public class mySort {
 ////        System.out.println("ÅÅÐòÇ°£º "+Arrays.toString(array));
 ////        int tmp[]=bitmapSort(array);
 ////        System.out.print("ÅÅÐòºó£º "+Arrays.toString(tmp));
-        int[]nums={5,1,1,2,0,0};
-        quickSort(nums,0,nums.length);
-        System.out.println(Arrays.toString(nums));
+//        int[]nums={5,1,1,2,0,0};
+//        quickSort(nums,0,nums.length);
+//        System.out.println(Arrays.toString(nums));
+//        int[]nums={51,32,73,23,42,62,99,14,24,3943,58,65,80,120};
+//        buildMinHeap(nums,nums.length);
+//        System.out.print(Arrays.toString(nums));
+
+
+//        int[]nums={3,5,4,1,2};
+//        quickSort(nums,0,nums.length);
+
+
+
+
     }
 }

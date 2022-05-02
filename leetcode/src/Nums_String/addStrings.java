@@ -2,7 +2,7 @@ package Nums_String;
 
 public class addStrings {
 
-    public String addStrings(String num1, String num2) {
+    public static String addStrings(String num1, String num2) {
         int i=num1.length()-1,j=num2.length()-1;
         int add=0;
         StringBuffer sb=new StringBuffer();
@@ -17,5 +17,9 @@ public class addStrings {
         }
         sb.reverse();
         return sb.toString();
+    }
+
+    public static void main(String[] args) {
+        System.out.println(addStrings("123","456"));
     }
 }

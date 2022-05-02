@@ -50,7 +50,7 @@ public class isEvenOddTree {
             if((level%2==1&&mList.get(level)<=root.val)||(level%2==0&&mList.get(level)>=root.val))
                 return false;
             mList.set(level,root.val);
-        }else
+    }else
             mList.add(root.val);
         return dfs(root.left,mList,level+1)&&dfs(root.right,mList,level+1);
 }

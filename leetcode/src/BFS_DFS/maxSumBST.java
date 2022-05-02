@@ -1,5 +1,5 @@
 package BFS_DFS;
-
+//为二叉搜索树的子树的最大节点和
 class BST {
     boolean isBST;
     int val;
@@ -42,9 +42,7 @@ public class maxSumBST {
     public static void main(String[] args) {
         maxSumBST maxSumBST=new maxSumBST();
         TreeNode root=TreeNode.constructTree(new Integer[]{1,4,3,2,4,2,5,null,null,null,null,null,null,4,6});
-
         TreeNode.show(root);
-
 //        System.out.println(result.left.right.isBST);
         System.out.println(maxSumBST.maxSumBST(root));
     }

@@ -14,6 +14,8 @@ public class medianSlidingWindow {
             dh.insert(nums[i]);
             dh.erase(nums[i - k]);
             ans[i - k + 1] = dh.getMedian();
+            System.out.println(dh.getSmall());
+            System.out.println(dh.getLarge());
         }
         return ans;
     }
@@ -30,6 +32,54 @@ class DualHeap {
     private int k;
     // small 和 large 当前包含的元素个数，需要扣除被「延迟删除」的元素
     private int smallSize, largeSize;
+
+    public PriorityQueue<Integer> getSmall() {
+        return small;
+    }
+
+    public void setSmall(PriorityQueue<Integer> small) {
+        this.small = small;
+    }
+
+    public PriorityQueue<Integer> getLarge() {
+        return large;
+    }
+
+    public void setLarge(PriorityQueue<Integer> large) {
+        this.large = large;
+    }
+
+    public Map<Integer, Integer> getDelayed() {
+        return delayed;
+    }
+
+    public void setDelayed(Map<Integer, Integer> delayed) {
+        this.delayed = delayed;
+    }
+
+    public int getK() {
+        return k;
+    }
+
+    public void setK(int k) {
+        this.k = k;
+    }
+
+    public int getSmallSize() {
+        return smallSize;
+    }
+
+    public void setSmallSize(int smallSize) {
+        this.smallSize = smallSize;
+    }
+
+    public int getLargeSize() {
+        return largeSize;
+    }
+
+    public void setLargeSize(int largeSize) {
+        this.largeSize = largeSize;
+    }
 
     public DualHeap(int k) {
         this.small = new PriorityQueue<>(Comparator.reverseOrder());
@@ -108,7 +158,7 @@ class DualHeap {
 
     public static void main(String[] args) {
         medianSlidingWindow med=new medianSlidingWindow();
-        System.out.println(Arrays.toString(med.medianSlidingWindow(new int[]{1,3,-1,-3,5,3,6,7},3)));
+        System.out.println(Arrays.toString(med.medianSlidingWindow(new int[]{1,2,3,4,3,2,1},3)));
     }
 }
 

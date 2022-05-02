@@ -1,7 +1,7 @@
 package Nums_String;
 //最长回文子串
 class longestPalindrome {
-    public String longestPalindrome(String s) {
+    public static String longestPalindrome(String s) {
         if (s == null || s.length() < 1) {
             return "";
         }
@@ -18,12 +18,17 @@ class longestPalindrome {
         return s.substring(start, end + 1);
     }
 
-    public int expandAroundCenter(String s, int left, int right) {
+    public static int expandAroundCenter(String s, int left, int right) {
         while (left >= 0 && right < s.length() && s.charAt(left) == s.charAt(right)) {
             --left;
             ++right;
         }
         return right - left - 1;
     }
+
+    public static void main(String[] args) {
+        System.out.print(longestPalindrome("cabade"));
+    }
+
 }
 

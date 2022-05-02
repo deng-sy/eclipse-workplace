@@ -33,7 +33,6 @@ public class sortList {
                 while(pre.next!=null)
                     pre=pre.next;
                 cur=next;
-
             }
 
         }

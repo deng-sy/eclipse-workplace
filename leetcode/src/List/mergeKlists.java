@@ -1,7 +1,7 @@
 package List;
 
 public class mergeKlists {
-    public static ListNode  mergeKLists(ListNode[]lists){
+    public static ListNode mergeKLists(ListNode[]lists){
         return merge(lists,0,lists.length-1);
     }
     public static ListNode merge(ListNode[]lists,int left,int right){
