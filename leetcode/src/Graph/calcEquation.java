@@ -10,6 +10,7 @@ public class calcEquation {
     public double[] calcEquation1(List<List<String>> equations, double[] values, List<List<String>> queries) {
         int nvars=0;
         Map<String,Integer>vars=new HashMap<>();
+
         int n=equations.size();
         for(int i=0;i<n;i++){
             if(!vars.containsKey(equations.get(i).get(0)))

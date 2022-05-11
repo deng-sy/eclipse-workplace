@@ -1,7 +1,6 @@
 package Nums_String;
 
 
-import java.lang.reflect.Array;
 import java.util.*;
 
 //排序
@@ -15,24 +14,34 @@ public class mySort {
                 if(array[i]>array[j])
                     swap(array,i,j);
             }
+            System.out.println(Arrays.toString(array));
 
         }
     }
-
-//    选择排序：每次选择最小值与当前的交换
-    public static void selectSort(int[] array){
-        for(int i=0;i<array.length;i++){
-            int index=i;
-            for(int j=i+1;j<array.length;j++){
-                if(array[index]>array[j]){
-                    index=j;
+//    快速排序：对冒泡排序的改进，每次选择基准并划分为两部分，小于它的往前挪，大于他的往后挪
+    public static void quickSort(int[]array){
+        quickSortHelper(array,0,array.length);
+    }
+    public static void quickSortHelper(int array[], int start, int end){
+        if(start<end){
+            int key=array[start];
+            int i=start;
+            for(int j=start+1;j<end;j++){
+                if(key>array[j]){
+                    swap(array,j,++i);
+//                    System.out.print(array[i]+" ");
                 }
             }
-            if(i!=index){
-                swap(array,i,index);
-            }
+            array[start]=array[i];
+            array[i]=key;
+            System.out.println(Arrays.toString(array));
+            quickSortHelper(array,start,i);
+            quickSortHelper(array,i+1,end);
         }
+
     }
+
+
 
 //    直接插入排序：类似于一张张地抽牌，每次把新数插入合适位置
     public static void insertSort(int[] array){
@@ -72,26 +81,23 @@ public class mySort {
             }
         }
     }
-
-//    快速排序：对冒泡排序的改进，每次选择基准并划分为两部分，小于它的往前挪，大于他的往后挪
-    public static void quickSort(int array[],int start,int end){
-        if(start<end){
-            int key=array[start];
-            int i=start;
-            for(int j=start+1;j<end;j++){
-                if(key>array[j]){
-                    swap(array,j,++i);
-//                    System.out.print(array[i]+" ");
+//    希尔排序(缩小增量排序)，对直接插入排序的改进，不稳定
+    public static void shellSort(int []array){
+        int length=array.length;
+        int step=length>>1;
+        while(step>=1){
+            for(int i=step;i<length;i++){
+                for(int j=i;j>=step;j-=step){
+                    if(array[j]<array[j-step])
+                        swap(array,j,j-step);
+                    else
+                        break;
                 }
             }
-            array[start]=array[i];
-            array[i]=key;
-            System.out.println(Arrays.toString(array));
-            quickSort(array,start,i);
-            quickSort(array,i+1,end);
+            step>>=1;
         }
-
     }
+
 
 //    归并排序递归实现
     public static void mergeSort1(int array[]){
@@ -138,6 +144,21 @@ public class mySort {
                 merge(array,j,j+i-1,Math.min(j+2*i-1,array.length-1),tmp);
             }
             i=i<<1;
+        }
+    }
+    //    选择排序：每次选择最小值与当前的交换
+    public static void selectSort(int[] array){
+        for(int i=0;i<array.length;i++){
+            int index=i;
+            for(int j=i+1;j<array.length;j++){
+                if(array[index]>array[j]){
+                    index=j;
+                }
+            }
+            if(i!=index){
+                swap(array,i,index);
+            }
+            System.out.println(Arrays.toString(array));
         }
     }
 
@@ -209,7 +230,7 @@ public class mySort {
         List<List<Integer>> buckets=new ArrayList<>(bucketCount);
 
         for(int i=0;i<bucketCount;i++)
-            buckets.add(new ArrayList<Integer>());
+            buckets.add(new ArrayList<>());
         for(int i=0;i<length;i++)
             buckets.get((array[i]-min)/bucketSize).add(array[i]);
         int currentIndex=0;
@@ -236,15 +257,16 @@ public class mySort {
             tmpArray[tmp][cnt[tmp]++]=array[j];
         }
 
-        System.out.println(Arrays.toString(cnt));
+//        System.out.println(Arrays.toString(cnt));
         int index=0;
         for(int j=0;j<digitCount;j++){
             if(cnt[j]==0)
                 continue;
             for(int k=0;k<cnt[j];k++)
                 array[index++]=tmpArray[j][k];
-            System.out.println(Arrays.toString(array));
+
         }
+        System.out.println(Arrays.toString(array));
         radix*=10;
     }
 
@@ -262,7 +284,7 @@ public class mySort {
                 min=array[i];
 
         }
-        return max<-min?-min:max;
+        return Math.max(max, -min);
     }
 
     private static int getBitCount(int num){
@@ -311,26 +333,11 @@ public class mySort {
         return new int[]{max,min};
     }
 
-
-//    希尔排序(缩小增量排序)，对直接插入排序的改进，不稳定
-    public static void shellSort(int []array){
-        int length=array.length;
-        int step=length>>1;
-        while(step>=1){
-            for(int i=step;i<length;i++){
-                for(int j=i;j>=step;j-=step){
-                    if(array[j]<array[j-step])
-                        swap(array,j,j-step);
-                    else
-                        break;
-                }
-            }
-            step>>=1;
-        }
-    }
-
-
 //    计数排序--桶大小为1的桶排序
+
+
+
+
 //    采用异或方式实现交换
     public static void swap(int[]array,int i,int j){
         if(i!=j){
@@ -349,9 +356,11 @@ public class mySort {
 ////        int tmp[]=bitmapSort(array);
 ////        System.out.print("排序后： "+Arrays.toString(tmp));
 //        int[]nums={5,1,1,2,0,0};
-//        quickSort(nums,0,nums.length);
+
 //        System.out.println(Arrays.toString(nums));
-//        int[]nums={51,32,73,23,42,62,99,14,24,3943,58,65,80,120};
+        int[]nums={51,32,73,23,42,62,99,14,24,3943,58,65,80,120};
+        radixSort(nums);
+//        selectSort(nums);
 //        buildMinHeap(nums,nums.length);
 //        System.out.print(Arrays.toString(nums));
 

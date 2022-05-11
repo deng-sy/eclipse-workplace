@@ -7,12 +7,10 @@ public class findMedianSortedArrays {
         int totalLength = length1 + length2;
         if (totalLength % 2 == 1) {
             int midIndex = totalLength / 2;
-            double median = getKthElement(nums1, nums2, midIndex + 1);
-            return median;
+            return getKthElement(nums1, nums2, midIndex + 1);
         } else {
             int midIndex1 = totalLength / 2 - 1, midIndex2 = totalLength / 2;
-            double median = (getKthElement(nums1, nums2, midIndex1 + 1) + getKthElement(nums1, nums2, midIndex2 + 1)) / 2.0;
-            return median;
+            return (getKthElement(nums1, nums2, midIndex1 + 1) + getKthElement(nums1, nums2, midIndex2 + 1)) / 2.0;
         }
     }
 
@@ -32,7 +30,7 @@ public class findMedianSortedArrays {
         int index1 = 0, index2 = 0;
 
         while (true) {
-            System.out.print(index1+" "+index2+" "+k+" ");
+//            System.out.print(index1+" "+index2+" "+k+" ");
             // ±ß½çÇé¿ö
             if (index1 == length1) {
                 return nums2[index2 + k - 1];
@@ -56,7 +54,7 @@ public class findMedianSortedArrays {
                 k -= (newIndex2 - index2 + 1);
                 index2 = newIndex2 + 1;
             }
-            System.out.println(newIndex1+" "+newIndex2);
+//            System.out.println(newIndex1+" "+newIndex2);
 
 
         }

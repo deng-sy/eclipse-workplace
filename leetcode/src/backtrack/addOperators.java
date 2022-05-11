@@ -24,7 +24,7 @@ public class addOperators {
         if(idx==n){
             if(res==target)
                 ans.add(expr.toString());
-            System.out.println(expr.toString());
+//            System.out.println(expr.toString());
             return;
         }
         int signIdx=expr.length();
@@ -33,7 +33,7 @@ public class addOperators {
         long val=0;
         for(int j=idx;j<n&&(j==idx||num.charAt(idx)!='0');j++){
             val=val*10+num.charAt(j)-'0';
-            System.out.println(idx+" "+j);
+//            System.out.println(idx+" "+j);
             expr.append(num.charAt(j));
             if(idx==0)
                 backtrack(expr,j+1,val,val);
@@ -50,8 +50,8 @@ public class addOperators {
     }
 
     public static void main(String[] args) {
-        String num="209";
-        int target=78;
+        String num="200";
+        int target=200;
         addOperators solution=new addOperators();
         System.out.println(solution.addOperators(num,target));
 

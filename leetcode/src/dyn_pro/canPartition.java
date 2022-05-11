@@ -16,9 +16,12 @@ public class canPartition {
                 if(j>=nums[i-1])
                     dp[j]+=dp[j-nums[i-1]];
             }
+            System.out.println(Arrays.toString(dp));
+            if(dp[cap]>0)
+                return true;
+
         }
-        if(dp[cap]>0)
-            return true;
+
         return false;
     }
 
@@ -49,6 +52,6 @@ public class canPartition {
 
     public static void main(String[] args) {
         int[]nums={1,5,11,5};
-        System.out.println(canPartition2(nums));
+        System.out.println(canPartition1(nums));
     }
 }

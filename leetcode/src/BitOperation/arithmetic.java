@@ -58,6 +58,8 @@ public class arithmetic {
         System.out.println(subtraction2(10,14));
         System.out.println(mult(10,14));
         System.out.println(div(20,3));
+
+
 //        System.out.println(System.nanoTime()-time);
     }
 }

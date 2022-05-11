@@ -50,6 +50,7 @@ public class isSubtree {
         for (int i = 2; i < MAX_N; ++i) {
             if (!vis[i]) {
                 p[++tot] = i;
+
             }
             for (int j = 1; j <= tot && i * p[j] < MAX_N; ++j) {
                 vis[i * p[j]] = true;

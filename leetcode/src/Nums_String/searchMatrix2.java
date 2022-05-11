@@ -8,7 +8,6 @@ public class searchMatrix2 {
 
     public static boolean searchMatrix2(int[][]matrix,int target){
         int height=matrix.length;
-        String str="ddd";
 
         if(height==0)
             return false;
