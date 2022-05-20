@@ -57,7 +57,7 @@ class strStr {
     }
     
     public static void main(String[] args) {
-    	int result=strStr("abcababcabc", "021Abc9Abc1");
+    	int result=strStr("abcababcabc", "AAAAACCCCCAAAAACCCCCCAAAAAGGGTTT");
 		System.out.println(result);
 	}
 }

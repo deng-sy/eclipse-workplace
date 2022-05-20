@@ -33,7 +33,6 @@ public class StringSort {
                 int high=last;
                 while(low<=high){
                     int mid=(low+high)>>1;
-
                     if(isBiggerChar(array[mid],key)){
                         high=mid-1;
                     }else{

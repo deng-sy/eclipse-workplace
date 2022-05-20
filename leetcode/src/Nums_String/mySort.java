@@ -7,6 +7,7 @@ import java.util.*;
 public class mySort {
 
 //    冒泡排序:相邻两两比较交换
+//    每趟确定一个位置的数
     public static void bubbleSort(int array[]){
         int length=array.length;
         for(int i=0;i<length-1;i++){
@@ -19,6 +20,7 @@ public class mySort {
         }
     }
 //    快速排序：对冒泡排序的改进，每次选择基准并划分为两部分，小于它的往前挪，大于他的往后挪
+//    每趟确定一个数的位置
     public static void quickSort(int[]array){
         quickSortHelper(array,0,array.length);
     }
@@ -44,6 +46,7 @@ public class mySort {
 
 
 //    直接插入排序：类似于一张张地抽牌，每次把新数插入合适位置
+//    第i趟确定前i个元素的相对大小关系
     public static void insertSort(int[] array){
         for(int i=0;i<array.length;i++){
             int j=i;
@@ -146,7 +149,7 @@ public class mySort {
             i=i<<1;
         }
     }
-    //    选择排序：每次选择最小值与当前的交换
+//    选择排序：每次选择最小值与当前的交换
     public static void selectSort(int[] array){
         for(int i=0;i<array.length;i++){
             int index=i;
@@ -193,6 +196,9 @@ public class mySort {
             maxHeapfy(array,i,heapSize);
         }
     }
+
+
+
     //    构建小顶堆
     private static void buildMinHeap(int[] array,int heapSize){
         for(int i=(heapSize)>>1-1;i>=0;i--){
@@ -358,8 +364,10 @@ public class mySort {
 //        int[]nums={5,1,1,2,0,0};
 
 //        System.out.println(Arrays.toString(nums));
-        int[]nums={51,32,73,23,42,62,99,14,24,3943,58,65,80,120};
-        radixSort(nums);
+//        int[]nums={51,32,73,23,42,62,99,14,24,3943,58,65,80,120};
+        int[]nums={3,4,5,1,2};
+        quickSort(nums);
+//        radixSort(nums);
 //        selectSort(nums);
 //        buildMinHeap(nums,nums.length);
 //        System.out.print(Arrays.toString(nums));

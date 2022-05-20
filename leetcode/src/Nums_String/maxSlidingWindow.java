@@ -8,6 +8,8 @@ public class maxSlidingWindow {
 //    优先队列
     public static int[] maxSlidingWindow1(int[] nums, int k) {
         int n = nums.length;
+        if(n==0)
+            return new int[]{};
         PriorityQueue<int[]> pq = new PriorityQueue<>((pair1, pair2) -> pair1[0] != pair2[0] ? pair2[0] - pair1[0] : pair2[1] - pair1[1]);
         for (int i = 0; i < k; ++i) {
             pq.offer(new int[]{nums[i], i});
@@ -52,7 +54,7 @@ public class maxSlidingWindow {
 
     public static void main(String[] args) {
         int[]nums={1,3,-1,-3,5,3,6,7};
-        System.out.println(Arrays.toString(maxSlidingWindow1(nums,3)));
+        System.out.println(Arrays.toString(maxSlidingWindow1(new int[]{},0)));
 //        Deque<Integer>deque=new LinkedList<>();
 //        deque.offerLast(1);
 //        deque.offerLast(2);

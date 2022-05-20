@@ -47,6 +47,8 @@ public class PrimePartners{
         }
         return true;
     }
+
+//    ĞÙÑÀÀûËã·¨
     public static boolean find(int idx){
         int odd=odds[idx];
         for(int i=0;i<even_cnt;i++){

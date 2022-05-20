@@ -20,6 +20,6 @@ public class longestCommonSubsequence {
     }
 
     public static void main(String[] args) {
-        System.out.print(longestCommonSubsequence("ezupkr","ubmrapg"));
+        System.out.print(longestCommonSubsequence("addbbccaacbddbbb","ddcddcbcdbcbbbdabdcddabddcadbbbbdddabacaadcdcaacd"));
     }
 }

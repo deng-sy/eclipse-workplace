@@ -22,9 +22,10 @@ public class addOperators {
 
     public void backtrack(StringBuffer expr,int idx,long res,long mul){
         if(idx==n){
+            System.out.println(expr.toString());
             if(res==target)
                 ans.add(expr.toString());
-//            System.out.println(expr.toString());
+
             return;
         }
         int signIdx=expr.length();
@@ -33,8 +34,9 @@ public class addOperators {
         long val=0;
         for(int j=idx;j<n&&(j==idx||num.charAt(idx)!='0');j++){
             val=val*10+num.charAt(j)-'0';
-//            System.out.println(idx+" "+j);
             expr.append(num.charAt(j));
+
+//            第一次没有运算符需要填充
             if(idx==0)
                 backtrack(expr,j+1,val,val);
             else{
