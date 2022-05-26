@@ -15,7 +15,6 @@ public class Trie {
         }
         parent.isWord=true;
     }
-
     public boolean startsWith(String prefix){
         return find(prefix)!=null;
     }

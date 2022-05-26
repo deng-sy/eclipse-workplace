@@ -54,6 +54,7 @@ public class divide {
 
         int res=0;
         int threshold=Integer.MIN_VALUE>>1;
+        System.out.println(dividend+" "+divisor);
         while(dividend<=divisor){
             int tmp=divisor;
             int times=1;
@@ -81,7 +82,7 @@ public class divide {
     }
 
     public static void main(String[] args) {
-        System.out.println(divide1(1,1));
+        System.out.println(divide3(-2147483648,1));
 //        System.out.println(substraction(10,2));
     }
 }

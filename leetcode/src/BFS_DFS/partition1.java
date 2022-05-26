@@ -3,7 +3,7 @@ package BFS_DFS;
 import java.util.*;
 
 //给定一个字符串 s ，请将 s 分割成一些子串，使每个子串都是 回文串 ，返回 s 所有可能的分割方案。
-public class partition {
+public class partition1 {
     String str;
     int n;
     List<List<String>>list=new ArrayList<>();
@@ -51,7 +51,7 @@ public class partition {
 
     public static void main(String[] args) {
         String str="googbye";
-        String[][]ret=new partition().partition(str);
+        String[][]ret=new partition1().partition(str);
         System.out.print(Arrays.deepToString(ret));
     }
 }

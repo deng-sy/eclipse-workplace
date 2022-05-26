@@ -1,4 +1,4 @@
-package Nums_String;
+package zijie;
 import java.util.*;
 public class Loop {
     static StringBuilder loop =new StringBuilder();
@@ -108,8 +108,9 @@ public class Loop {
     }
     public static void main(String[] args) {
 //        System.out.print(getRepetend(1,5)) ;
-        System.out.print(Loop(2,990));
+//        System.out.print(Loop(2,990));
 //        System.out.print(getGCD(26,4));
+        System.out.println(getRepetend(2,990));
 
     }
 }
