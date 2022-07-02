@@ -6,12 +6,8 @@ public class maxSubArray {
             return 0;
         int len=nums.length;
         int max_sum=nums[0];
-//        int[]dp=new int[len+1];
-//        dp[0]=0;
         int pre=0;
         for(int i=0;i<len;i++){
-//            dp[i+1]=Math.max(dp[i],0)+nums[i];
-//            max_sum=Math.max(max_sum,dp[i+1]);
             pre=Math.max(pre+nums[i],nums[i]);
             max_sum=Math.max(pre,max_sum);
         }

@@ -7,21 +7,15 @@ public class hexie{
         while(sc.hasNext()){
             int n=sc.nextInt();
             int m=sc.nextInt();
-            int[]nums=new int[n];
-            for(int i=0;i<n;i++){
-                nums[i]=sc.nextInt();
-            }
             int ans=0;
-
+            int sum=0;
+            int[]map=new int[m];
+            map[0]=1;
             for(int i=0;i<n;i++){
-                int sum=nums[i];
-                if(sum%m==0)
-                    ans++;
-                for(int j=i+1;j<n;j++){
-                    sum+=nums[j];
-                    if(sum%m==0)
-                        ans++;
-                }
+                sum+=sc.nextInt();
+                int res=sum%m;
+                ans+=map[res];
+                map[res]++;
             }
             System.out.println(ans);
         }

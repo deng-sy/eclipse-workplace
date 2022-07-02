@@ -116,7 +116,6 @@ public class mySort {
 //            System.out.print(Arrays.toString(array));
         }
     }
-
     public static void merge(int[] data,int left,int center,int right,int[] tmp){
         int tmpindex=left;
         int _left=left;
@@ -164,7 +163,6 @@ public class mySort {
             System.out.println(Arrays.toString(array));
         }
     }
-
 //    ¶ÑÅÅÐò(´ó¶¥¶Ñ)
     public static void heapSort(int []array){
         int length=array.length;
@@ -196,9 +194,6 @@ public class mySort {
             maxHeapfy(array,i,heapSize);
         }
     }
-
-
-
     //    ¹¹½¨Ð¡¶¥¶Ñ
     private static void buildMinHeap(int[] array,int heapSize){
         for(int i=(heapSize)>>1-1;i>=0;i--){

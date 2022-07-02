@@ -1,11 +1,10 @@
 package Graph;
 //现有一种使用英语字母的外星文语言，这门语言的字母顺序与英语顺序不同。
-
 //给定一个字符串列表 words ，作为这门语言的词典，words 中的字符串已经 按这门新语言的字母顺序进行了排序 。
-
 //请你根据该词典还原出此语言中已知的字母顺序，并 按字母递增顺序 排列。若不存在合法字母顺序，返回 "" 。若存在多种可能的合法字母顺序，返回其中 任意一种 顺序即可。
 import java.util.*;
 public class alienOrder {
+//    拓扑排序，通过入度来解决
     public static String alienOrder(String[] words) {
         String pre=words[0];
         int pre_len=pre.length(),cur_len,min_len;

@@ -1,7 +1,5 @@
 package Nums_String;
-
 import java.util.*;
-
 public class longestAB {
     public static int longestAB(String S){
         Map<Integer,Integer>map=new HashMap<>();
@@ -22,5 +20,7 @@ public class longestAB {
 
     public static void main(String[] args) {
         System.out.println(longestAB("BABAABBABA"));
+//        String str="1.1.1.1";
+//        System.out.println(str.replaceAll("\\.","[.]"));
     }
 }

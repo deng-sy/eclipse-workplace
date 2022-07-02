@@ -1,5 +1,5 @@
 package Tree;
-
+//给定一个二叉搜索树，请将它的每个节点的值替换成树中大于或者等于该节点值的所有节点值之和。
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,7 +10,6 @@ public class convertBST {
         inorder(root);
         dfs(root);
         return root;
-
     }
     private void inorder(TreeNode root){
         if(root==null)

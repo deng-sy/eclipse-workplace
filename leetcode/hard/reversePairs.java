@@ -1,15 +1,14 @@
 package hard;
 //在数组中的两个数字，如果前面一个数字大于后面的数字，则这两个数字组成一个逆序对。输入一个数组，求出这个数组中的逆序对的总数。
 
+import java.util.Arrays;
+
 public class reversePairs {
     public int reversePairs(int[] nums) {
         int len=nums.length;
         if(len<2)
             return 0;
-        int[]copy=new int[len];
-        for(int i=0;i<len;i++){
-            copy[i]=nums[i];
-        }
+        int[]copy= Arrays.copyOf(nums,nums.length);
         int[]tmp=new int[len];
         return reversePairs(copy,0,len-1,tmp);
 

@@ -9,7 +9,6 @@ public class generateParenthesis {
         backtrack(ans, new StringBuilder(), 0, 0, n);
         return ans;
     }
-
     private static void backtrack(List<String> ans, StringBuilder cur, int open, int close, int max) {
         if (cur.length() == max * 2) {
             ans.add(cur.toString());

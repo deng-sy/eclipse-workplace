@@ -10,6 +10,4 @@ class TrieNode {
         isWord=false;
         children=new TrieNode[26];
     }
-
-
 }
