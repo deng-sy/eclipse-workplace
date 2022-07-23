@@ -32,7 +32,7 @@ public class nextPermutation {
     }
 
     public static void main(String[] args) {
-        int[]nums={1,2,2,3,3};
+        int[]nums={1,2,3,4};
         nextPermutation(nums);
         System.out.println(Arrays.toString(nums));
     }

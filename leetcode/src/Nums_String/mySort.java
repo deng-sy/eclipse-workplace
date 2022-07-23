@@ -172,7 +172,6 @@ public class mySort {
             maxHeapfy(array,0,length-1-i);
         }
     }
-
     public static void maxHeapfy(int[] array,int i,int heapSize){
         int left=i*2+1,right=i*2+2;
         int largest=i;
@@ -187,13 +186,14 @@ public class mySort {
             maxHeapfy(array,largest,heapSize);
         }
     }
-
 //    构建大顶堆
     private static void buildMaxHeap(int[] array,int heapSize){
         for(int i=(heapSize)>>1-1;i>=0;i--){
             maxHeapfy(array,i,heapSize);
         }
     }
+
+
     //    构建小顶堆
     private static void buildMinHeap(int[] array,int heapSize){
         for(int i=(heapSize)>>1-1;i>=0;i--){
@@ -257,7 +257,6 @@ public class mySort {
             int tmp=((array[j]/radix)%10)+9;
             tmpArray[tmp][cnt[tmp]++]=array[j];
         }
-
 //        System.out.println(Arrays.toString(cnt));
         int index=0;
         for(int j=0;j<digitCount;j++){
@@ -359,15 +358,13 @@ public class mySort {
 //        int[]nums={5,1,1,2,0,0};
 
 //        System.out.println(Arrays.toString(nums));
-//        int[]nums={51,32,73,23,42,62,99,14,24,3943,58,65,80,120};
-        int[]nums={3,4,5,1,2};
-        quickSort(nums);
-//        radixSort(nums);
+        int[]nums={9415,5908,1840,5307};
+//        int[]nums={3,4,5,1,2};
+//        quickSort(nums);
+        radixSort(nums);
 //        selectSort(nums);
 //        buildMinHeap(nums,nums.length);
 //        System.out.print(Arrays.toString(nums));
-
-
 //        int[]nums={3,5,4,1,2};
 //        quickSort(nums,0,nums.length);
 
