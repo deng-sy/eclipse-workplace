@@ -13,4 +13,7 @@ public class shortestSequence {
         }
         return ans+1;
     }
+
+    public static void main(String[] args) {
+    }
 }
