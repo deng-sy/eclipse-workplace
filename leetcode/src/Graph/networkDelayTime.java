@@ -5,6 +5,7 @@ import java.util.*;
 //现在，从某个节点?K?发出一个信号。需要多久才能使所有节点都收到信号？如果不能使所有节点收到信号，返回?-1 。
 
 public class networkDelayTime {
+    //dijstra算法
     public static int networkDelayTime(int[][] times, int n, int k) {
         final int INF = Integer.MAX_VALUE / 2;
         int[][] g = new int[n][n];

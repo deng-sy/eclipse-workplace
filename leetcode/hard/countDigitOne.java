@@ -5,22 +5,23 @@ package hard;
 
 public class countDigitOne {
     public static int countDigitOne(int n) {
-        int cnt=0;//位数
-        int tmp=n;
-        while(tmp!=0){
+        int cnt = 0;//位数
+        int tmp = n;
+        while (tmp != 0) {
             cnt++;
-            tmp/=10;
+            tmp /= 10;
         }
-//        System.out.println(cnt);
-        int res=0;
-        long mod=10;
-        for(int i=0;i<cnt;i++,mod*=10){
-            res+=(n/mod)*(mod/10);
-            if((n%mod)/(mod/10)==1)
-                res+=(n%mod)%(mod/10)+1;
-            else if((n%mod)/(mod/10)>1)
-                res+=mod/10;
-            System.out.println(mod+" "+res);
+        int res = 0;
+        long mod = 10;
+        for (int i = 0; i < cnt; i++, mod *= 10) {
+            res += (n / mod) * (mod / 10);
+            long x = (n % mod) / (mod / 10);
+            System.out.println(x);
+            if (x == 1)
+                res += (n % mod) % (mod / 10) + 1;
+            else if (x > 1)
+                res += mod / 10;
+
         }
         return res;
     }

@@ -3,7 +3,6 @@ package Graph;
 //
 //现在给定所有的城市和航班，以及出发城市 src 和目的地 dst，你的任务是找到出一条最多经过 k?站中转的路线，使得从 src 到 dst 的 价格最便宜 ，并返回该价格。 如果不存在这样的路线，则输出 -1。
 
-import java.util.ArrayList;
 import java.util.*;
 
 public class findCheapestPrice {
@@ -57,7 +56,7 @@ public class findCheapestPrice {
 //    }
     static final int INF=Integer.MAX_VALUE/2;
     static int[]dist=new int[100];
-    public static int findCheapestPrice(int n, int[][] flights, int src, int dst, int k){
+    public static int findCheapestPrice(int[][] flights, int src, int dst, int k){
         Arrays.fill(dist,INF);
         dist[src]=0;
         for(int limit=0;limit<k+1;limit++){
@@ -71,7 +70,7 @@ public class findCheapestPrice {
     }
     public static void main(String[] args) {
         int[][]flights={{0,1,5},{1,2,5},{0,3,2},{1,4,1},{3,1,2},{4,2,1}};
-        int n=5,src=0,dst=2,k=2;
-        System.out.println(findCheapestPrice(n,flights,src,dst,k));
+        int src=0,dst=2,k=2;
+        System.out.println(findCheapestPrice(flights,src,dst,k));
     }
 }

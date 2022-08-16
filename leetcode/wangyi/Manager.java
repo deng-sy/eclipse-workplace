@@ -12,7 +12,7 @@ import java.io.InputStreamReader;
 import java.util.Arrays;
 import java.util.Scanner;
 
-
+//ĞÙÑÀÀûËã·¨
 public class Manager {
     static int[][]map;
     static int[]match;

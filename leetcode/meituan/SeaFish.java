@@ -1,12 +1,12 @@
 package meituan;
 
-import java.util.Arrays;
 
 public class SeaFish {
     public static int splitArray(int[] nums) {
         //ini: sum, l, r
-        int m=3;
-        int max = nums[0]; int sum = 0;
+        int m = 3;
+        int max = nums[0];
+        int sum = 0;
         for (int num : nums) {
             sum += num;
             max = Math.max(max, num);
@@ -21,7 +21,7 @@ public class SeaFish {
             int mid = (l + r) / 2;
             if (noLongerThanM(mid, nums, m)) r = mid - 1;
             else l = mid + 1;
-            System.out.printf("%d,%d\n",l,r);
+            System.out.printf("%d,%d\n", l, r);
         }
 
         return l;
@@ -43,7 +43,7 @@ public class SeaFish {
     }
 
     public static void main(String[] args) {
-        System.out.println(splitArray(new int[]{7,3,3,1,3}));
+        System.out.println(splitArray(new int[]{7, 3, 3, 1, 3}));
     }
 
 }

@@ -7,20 +7,6 @@ import java.util.Scanner;
 // 她同时还希望挑选出的卡片的数字之和是7的倍数，请问她能挑选出的最大数字之和是多少？（注意，小美也可以一张卡片都不挑选）
 public class SevenTimes {
     static int maxSum=0;
-//    超时
-    public static void backtrack(int[]nums,int curSum,int start){
-        if(curSum%7==0&&curSum>maxSum){
-            maxSum=curSum;
-            return;
-        }
-        for(int i=start;i<nums.length;i++){
-            curSum+=nums[i];
-            backtrack(nums,curSum,i+1);
-            curSum-=nums[i];
-        }
-    }
-
-
     public static int dym_pro(int n,int[]nums){
 //      dp[i][j], 记录对7取模为j的前i个数的和的最大值
         int mod=7;
@@ -29,15 +15,12 @@ public class SevenTimes {
             for(int j=0;j<mod;j++)
                 dp[i][j]=Integer.MIN_VALUE;
         dp[0][0]=0;
-
         for(int i=1;i<=n;i++){
             for(int j=0;j<mod;j++){
                 dp[i][j]=Math.max(dp[i][j],dp[i-1][j]);
                 dp[i][j]=Math.max(dp[i][j],dp[i-1][((j-nums[i])%7+7)%7]+nums[i]);
 
             }
-
-
         }
         return dp[n][0];
     }
