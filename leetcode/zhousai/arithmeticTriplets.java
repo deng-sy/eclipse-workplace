@@ -17,6 +17,8 @@ public class arithmeticTriplets {
     public static void main(String[] args) {
         int[] nums = {0, 1, 4, 6, 7, 10};
         int diff = 3;
+        long time=System.currentTimeMillis();
         System.out.println(new arithmeticTriplets().arithmeticTriplets(nums, diff));
+        System.out.println(System.currentTimeMillis()-time);
     }
 }
