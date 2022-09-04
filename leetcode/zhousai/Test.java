@@ -1,16 +1,17 @@
 package zhousai;
 
-import java.util.HashSet;
-import java.util.Objects;
+import java.util.*;
 
 public class Test {
     static class Shift {
-        int begin,end,dir;
+        int begin, end, dir;
+
         public Shift(int begin, int end, int dir) {
             this.begin = begin;
             this.end = end;
             this.dir = dir;
         }
+
         @Override
         public boolean equals(Object o) {
             if (this == o) return true;
@@ -26,7 +27,18 @@ public class Test {
             return Objects.hash(begin, end, dir);
         }
     }
+
     public static void main(String[] args) {
-        System.out.println(-29%26);
+        int n = 3;
+        long[] ends = new long[n];
+        ends[0] = 27;
+        ends[1] = 15;
+        ends[2] = 0;
+        Room[] rooms = new Room[3];
+        for (int i = 0; i < n; i++) {
+            rooms[i] = new Room(ends[i], i);
+        }
+        for (Room room : rooms)
+            System.out.println(room.id + " " + room.end);
     }
 }
