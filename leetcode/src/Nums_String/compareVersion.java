@@ -15,8 +15,7 @@ public class compareVersion {
                 y = y * 10 + version2.charAt(j) - '0';
             }
             ++j; // Ìø¹ýµãºÅ
-            System.out.printf("%d,%d",x,y);
-            System.out.println();
+            System.out.printf("%d,%d\n", x, y);
 
             if (x != y) {
                 return x > y ? 1 : -1;
@@ -26,6 +25,6 @@ public class compareVersion {
     }
 
     public static void main(String[] args) {
-        System.out.println(compareVersion("1.0.0","1.0.0.1"));
+        System.out.println(compareVersion("1.0.0", "1.0.0.1"));
     }
 }

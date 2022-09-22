@@ -1,10 +1,13 @@
 package dyn_pro;
+
 import java.util.*;
+
+//最长严格递增子序列的个数
 public class findNumberOfLIS {
     public static int findNumberOfLIS(int[] nums) {
-//        dp[i]表示所有长度为i的递增序列的末尾值
+//        dp[i]表示所有长度为i+1的递增序列的末尾值
         List<List<Integer>> dp = new ArrayList<>();
-//        cnt[i][j]表示以d[i][j]为结尾的最长上升子序列的个数
+//        cnt[i][j+1]表示以d[i][j]为结尾的最长上升子序列的个数
         List<List<Integer>> cnt = new ArrayList<>();
         for (int num : nums) {
             int i = binarySearch1(dp.size(), dp, num);
@@ -32,6 +35,7 @@ public class findNumberOfLIS {
         int size1 = cnt.size(), size2 = cnt.get(size1 - 1).size();
         return cnt.get(size1 - 1).get(size2 - 1);
     }
+
     public static int binarySearch1(int n, List<List<Integer>> d, int target) {
 //        返回小于target的最大元素的idx
         int l = 0, r = n;
@@ -46,6 +50,7 @@ public class findNumberOfLIS {
         }
         return l;
     }
+
     public static int binarySearch2(int n, List<Integer> list, int target) {
 //        返回大于等于target的最小元素的idx
         int l = 0, r = n;
@@ -59,8 +64,9 @@ public class findNumberOfLIS {
         }
         return l;
     }
-    public static void main(String[]args) {
-        int[]nums={1,3,5,4,7};
+
+    public static void main(String[] args) {
+        int[] nums = {1, 3, 6, 4, 5};
         System.out.println(findNumberOfLIS(nums));
     }
 }

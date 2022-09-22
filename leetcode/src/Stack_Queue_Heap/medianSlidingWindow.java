@@ -157,8 +157,8 @@ class DualHeap {
     }
 
     public static void main(String[] args) {
-        medianSlidingWindow med=new medianSlidingWindow();
-        System.out.println(Arrays.toString(med.medianSlidingWindow(new int[]{1,2,3,4,3,2,1},3)));
+        medianSlidingWindow med = new medianSlidingWindow();
+        System.out.println(Arrays.toString(med.medianSlidingWindow(new int[]{1, 2, 3, 4, 3, 2, 1}, 3)));
     }
 }
 

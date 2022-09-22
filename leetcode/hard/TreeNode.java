@@ -16,44 +16,53 @@ class TreeNode {
     int val;
     TreeNode left;
     TreeNode right;
-    TreeNode(int val){this.val=val;}
 
-//    数组构建树
-    public static TreeNode constructTree(Integer[] nums){
-        if(nums.length==0){return new TreeNode(0);}
-        Deque<TreeNode> nodeDeque=new LinkedList<>();
+    TreeNode(int val) {
+        this.val = val;
+    }
 
-        TreeNode root=new TreeNode(nums[0]);
+    //    数组构建树
+    public static TreeNode constructTree(Integer[] nums) {
+        if (nums.length == 0) {
+            return new TreeNode(0);
+        }
+        Deque<TreeNode> nodeDeque = new LinkedList<>();
+
+        TreeNode root = new TreeNode(nums[0]);
         nodeDeque.offer(root);
         TreeNode cur;
 
 //        记录当前行节点的数量，等于上一行非空节点数量*2
-        int lineNodeNum=2;
+        int lineNodeNum = 2;
 
 //        记录当前行中数字在数组中的起始位置
-        int startIndex=1;
+        int startIndex = 1;
 
 //        记录数组中的剩余元素数量
-        int restLength=nums.length-1;
+        int restLength = nums.length - 1;
 
         while (restLength > 0) {
-            for(int i=startIndex;i<startIndex+lineNodeNum;i+=2){
-                if(i==nums.length){return root;}
-                cur=nodeDeque.poll();
-                if(nums[i]!=null){
-                    cur.left=new TreeNode(nums[i]);
+            for (int i = startIndex; i < startIndex + lineNodeNum; i += 2) {
+                if (i == nums.length) {
+                    return root;
+                }
+                cur = nodeDeque.poll();
+                if (nums[i] != null) {
+                    cur.left = new TreeNode(nums[i]);
                     nodeDeque.offer(cur.left);
 
                 }
-                if(i+1==nums.length){return root;}
-                if(nums[i+1]!=null){
-                    cur.right=new TreeNode(nums[i+1]);
+                if (i + 1 == nums.length) {
+                    return root;
+                }
+                if (nums[i + 1] != null) {
+                    cur.right = new TreeNode(nums[i + 1]);
                     nodeDeque.offer(cur.right);
                 }
             }
-            startIndex+=lineNodeNum;
-            restLength=lineNodeNum;
-            lineNodeNum=nodeDeque.size()*2;
+            startIndex += lineNodeNum;
+            restLength = lineNodeNum;
+            lineNodeNum = nodeDeque.size() * 2;
         }
         return root;
     }
@@ -64,7 +73,7 @@ class TreeNode {
         return root == null ? 0 : (1 + Math.max(getTreeDepth(root.left), getTreeDepth(root.right)));
     }
 
-//    打印树
+    //    打印树
     private static void writeArray(TreeNode currNode, int rowIndex, int columnIndex, String[][] res, int treeDepth) {
         // 保证输入的树不为空
         if (currNode == null) return;
@@ -103,23 +112,23 @@ class TreeNode {
         // 用一个字符串数组来存储每个位置应显示的元素
         String[][] res = new String[arrayHeight][arrayWidth];
         // 对数组进行初始化，默认为一个空格
-        for (int i = 0; i < arrayHeight; i ++) {
-            for (int j = 0; j < arrayWidth; j ++) {
+        for (int i = 0; i < arrayHeight; i++) {
+            for (int j = 0; j < arrayWidth; j++) {
                 res[i][j] = " ";
             }
         }
 
         // 从根节点开始，递归处理整个树
         // res[0][(arrayWidth + 1)/ 2] = (char)(root.val + '0');
-        writeArray(root, 0, arrayWidth/ 2, res, treeDepth);
+        writeArray(root, 0, arrayWidth / 2, res, treeDepth);
 
         // 此时，已经将所有需要显示的元素储存到了二维数组中，将其拼接并打印即可
-        for (String[] line: res) {
+        for (String[] line : res) {
             StringBuilder sb = new StringBuilder();
-            for (int i = 0; i < line.length; i ++) {
+            for (int i = 0; i < line.length; i++) {
                 sb.append(line[i]);
                 if (line[i].length() > 1 && i <= line.length - 1) {
-                    i += line[i].length() > 4 ? 2: line[i].length() - 1;
+                    i += line[i].length() > 4 ? 2 : line[i].length() - 1;
                 }
             }
             System.out.println(sb.toString());
@@ -127,31 +136,36 @@ class TreeNode {
     }
 
     //    前序遍历递归
-    public static void preOrder1(TreeNode root){
-        if(root==null){return;}
-        System.out.print(root.val+" ");
+    public static void preOrder1(TreeNode root) {
+        if (root == null) {
+            return;
+        }
+        System.out.print(root.val + " ");
         preOrder1(root.left);
         preOrder1(root.right);
     }
+
     //    前序遍历非递归写法
-    public static void preOrder2(TreeNode root){
-        if(root==null){return;}
-        Stack<TreeNode> q1=new Stack<>();
+    public static void preOrder2(TreeNode root) {
+        if (root == null) {
+            return;
+        }
+        Stack<TreeNode> q1 = new Stack<>();
         q1.push(root);
-        while(!q1.isEmpty()){
-            TreeNode t1=q1.pop();
-            System.out.print(t1.val+" ");
-            if(t1.right!=null){
+        while (!q1.isEmpty()) {
+            TreeNode t1 = q1.pop();
+            System.out.print(t1.val + " ");
+            if (t1.right != null) {
                 q1.push(t1.right);
             }
-            if(t1.left!=null){
+            if (t1.left != null) {
                 q1.push(t1.left);
             }
         }
     }
 
-//    Morris前序遍历
-    public static void MorrisPreorder(TreeNode root){
+    //    Morris前序遍历
+    public static void MorrisPreorder(TreeNode root) {
         TreeNode cur = root;
         TreeNode mostright;
         while (cur != null) {
@@ -180,97 +194,105 @@ class TreeNode {
             cur = cur.right;
         }
     }
+
     //    中序遍历递归
-    public static void midOrder1(TreeNode root){
-        if(root==null){return;}
+    public static void midOrder1(TreeNode root) {
+        if (root == null) {
+            return;
+        }
         midOrder1(root.left);
-        System.out.print(root.val+" ");
+        System.out.print(root.val + " ");
         midOrder1(root.right);
     }
+
     //    中序遍历非递归写法
-    public static void midOrder2(TreeNode root){
-        Stack<TreeNode> q1=new Stack<>();
-        while(root!=null||!q1.isEmpty()){
-            while(root!=null){
+    public static void midOrder2(TreeNode root) {
+        Stack<TreeNode> q1 = new Stack<>();
+        while (root != null || !q1.isEmpty()) {
+            while (root != null) {
                 q1.push(root);
-                root=root.left;
+                root = root.left;
             }
-            if(!q1.isEmpty()){
-                root=q1.pop();
-                System.out.print(root.val+" ");
-                root=root.right;
+            if (!q1.isEmpty()) {
+                root = q1.pop();
+                System.out.print(root.val + " ");
+                root = root.right;
             }
         }
     }
+
     //    采用Morris中序遍历节省空间
-    public static void MorrisInorder(TreeNode root){
-        TreeNode cur = root, mostright ;
+    public static void MorrisInorder(TreeNode root) {
+        TreeNode cur = root, mostright;
         while (cur != null) {
             mostright = cur.left;
             if (cur.left != null) {
-                while(mostright.right != null && mostright.right != cur)
+                while (mostright.right != null && mostright.right != cur)
                     mostright = mostright.right;
-                if(mostright.right == null) {
+                if (mostright.right == null) {
                     mostright.right = cur;
                     cur = cur.left;
                     continue;
-                }else
+                } else
                     mostright.right = null;
             }
-            System.out.print(cur.val+" ");
+            System.out.print(cur.val + " ");
             cur = cur.right;
         }
     }
 
     //    后序遍历递归
-    public static void aftOrder1(TreeNode root){
-        if(root==null){return;}
-        aftOrder1(root.left);
-        aftOrder1(root.right);
-        System.out.print(root.val+" ");
-    }
-    //    后序遍历非递归写法1
-    public static void aftOrder2(TreeNode root){
-        if(root==null){
+    public static void aftOrder1(TreeNode root) {
+        if (root == null) {
             return;
         }
-        Stack<TreeNode> s1=new Stack<>();//放置访问的节点
-        Stack<TreeNode> s2=new Stack<>();//放置要打印的节点
+        aftOrder1(root.left);
+        aftOrder1(root.right);
+        System.out.print(root.val + " ");
+    }
+
+    //    后序遍历非递归写法1
+    public static void aftOrder2(TreeNode root) {
+        if (root == null) {
+            return;
+        }
+        Stack<TreeNode> s1 = new Stack<>();//放置访问的节点
+        Stack<TreeNode> s2 = new Stack<>();//放置要打印的节点
         s1.push(root);
-        while(!s1.isEmpty()){
-            root=s1.pop();
+        while (!s1.isEmpty()) {
+            root = s1.pop();
             s2.push(root);
-            if(root.left!=null){
+            if (root.left != null) {
                 s1.push(root.left);
             }
-            if(root.right!=null){
+            if (root.right != null) {
                 s1.push(root.right);
             }
         }
-        while(!s2.isEmpty()){
-            System.out.print(s2.pop().val+" ");
+        while (!s2.isEmpty()) {
+            System.out.print(s2.pop().val + " ");
         }
 
     }
 
     //    后序遍历非递归写法2
-    public static void aftOrder3(TreeNode root){
-        if(root==null){
+    public static void aftOrder3(TreeNode root) {
+        if (root == null) {
             return;
         }
-        Stack<TreeNode> stack =new Stack<>();
+        Stack<TreeNode> stack = new Stack<>();
         stack.push(root);
         TreeNode tmp;
-        while(!stack.isEmpty()){
-            tmp=stack.peek();
+        while (!stack.isEmpty()) {
+            tmp = stack.peek();
 //            后面两个条件表示这棵树的左右节点都已经访问过了
-            if(tmp.left!=null&&root!=tmp.left&&root!=tmp.right){
+            if (tmp.left != null && root != tmp.left && root != tmp.right) {
                 stack.push(tmp.left);
-            }else if(tmp.right!=null&&root!=tmp.right){
+            } else if (tmp.right != null && root != tmp.right) {
                 stack.push(tmp.right);
-            }else{
-                System.out.print(stack.pop().val+" ");
-                root=tmp;
+            } else {
+                System.out.print(stack.pop().val + " ");
+                root = tmp;
             }
         }
     }
@@ -328,16 +350,16 @@ class TreeNode {
 
 
     //    DFS深度优先非递归
-    public static void treeDFS1(TreeNode root){
-        Stack<TreeNode> stack=new Stack<>();
+    public static void treeDFS1(TreeNode root) {
+        Stack<TreeNode> stack = new Stack<>();
         stack.push(root);
-        while(!stack.isEmpty()){
-            TreeNode node=stack.pop();
-            System.out.print(node.val+" ");
-            if(node.right!=null){
+        while (!stack.isEmpty()) {
+            TreeNode node = stack.pop();
+            System.out.print(node.val + " ");
+            if (node.right != null) {
                 stack.push(node.right);
             }
-            if(node.left!=null){
+            if (node.left != null) {
                 stack.push(node.left);
             }
 
@@ -345,66 +367,67 @@ class TreeNode {
     }
 
     //    DFS深度优先递归==前序遍历
-    public static void treeDFS2(TreeNode root){
-        if(root==null){
+    public static void treeDFS2(TreeNode root) {
+        if (root == null) {
             return;
         }
-        System.out.print(root.val+" ");
+        System.out.print(root.val + " ");
         treeDFS2(root.left);
         treeDFS2(root.right);
     }
 
     //    BFS广度优先非递归==层序遍历
-    public static void treeBFS1(TreeNode root){
-        if(root==null){
+    public static void treeBFS1(TreeNode root) {
+        if (root == null) {
             return;
         }
-        Queue<TreeNode> queue=new LinkedList<>();
+        Queue<TreeNode> queue = new LinkedList<>();
         queue.offer(root);
-        while(!queue.isEmpty()){
-            TreeNode node=queue.poll();
-            System.out.print(node.val+" ");
-            if(node.left!=null){
+        while (!queue.isEmpty()) {
+            TreeNode node = queue.poll();
+            System.out.print(node.val + " ");
+            if (node.left != null) {
                 queue.offer(node.left);
             }
-            if(node.right!=null){
+            if (node.right != null) {
                 queue.offer(node.right);
             }
         }
     }
 
     //   BFS广度优先递归
-    public static void treeBFS2(TreeNode root){
-        int depth=depth(root);
-        for(int i=0;i<depth;i++){
-            printLevel(root,i);
+    public static void treeBFS2(TreeNode root) {
+        int depth = depth(root);
+        for (int i = 0; i < depth; i++) {
+            printLevel(root, i);
         }
     }
 
-//    返回最大深度
-    private static int depth(TreeNode root){
-        if(root==null){
+    //    返回最大深度
+    private static int depth(TreeNode root) {
+        if (root == null) {
             return 0;
         }
-        int leftDepth=depth(root.left);
-        int rightDepth=depth(root.right);
-        return Math.max(leftDepth,rightDepth)+1;
+        int leftDepth = depth(root.left);
+        int rightDepth = depth(root.right);
+        return Math.max(leftDepth, rightDepth) + 1;
     }
-    private static void printLevel(TreeNode root, int level){
-        if(root==null){
+
+    private static void printLevel(TreeNode root, int level) {
+        if (root == null) {
             return;
         }
-        if(level==0){
-            System.out.print(root.val+" ");
-        }else{
-            printLevel(root.left,level-1);
-            printLevel(root.right,level-1);
+        if (level == 0) {
+            System.out.print(root.val + " ");
+        } else {
+            printLevel(root.left, level - 1);
+            printLevel(root.right, level - 1);
         }
     }
 
 
     public static void main(String[] args) {
-        Integer nums[] ={5,4,8,11,null,13,4,7,2,null,null,null,1};
+        Integer nums[] = {5, 4, 8, 11, null, 13, 4, 7, 2, null, null, null, 1};
         // 根据给定的数组创建一棵树
         TreeNode root = TreeNode.constructTree(nums);
         // 将刚刚创建的树打印出来

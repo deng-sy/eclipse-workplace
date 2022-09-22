@@ -1,4 +1,5 @@
 package Stack_Queue_Heap;
+
 import java.util.*;
 //给你一个字符串表达式 s ，请你实现一个基本计算器来计算并返回它的值。
 //s 由数字、'+'、'-'、'('、')'、和 ' ' 组成
@@ -8,7 +9,7 @@ import java.util.*;
 
 public class Calculator1 {
     public int calculate(String s) {
-        Deque<Integer> ops = new LinkedList<Integer>();
+        Deque<Integer> ops = new LinkedList<>();
         ops.push(1);
         int sign = 1;
         int ret = 0;

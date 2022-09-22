@@ -1,4 +1,5 @@
 package Graph;
+
 import java.util.*;
 //给你一个下标从 0 开始的二维整数数组 grid ，数组大小为 m x n 。每个单元格都是两个值之一：
 //0 表示一个 空 单元格，
@@ -8,27 +9,27 @@ import java.util.*;
 
 public class minimumObstacles {
     public static int minimumObstacles(int[][] grid) {
-        int[][]dirs={{-1,0},{1,0},{0,-1},{0,1}};
-        int m=grid.length,n=grid[0].length;
-        int[][]dist=new int[m][n];
-        dist[0][0]=0;
-        boolean[][]vis=new boolean[m][n];
-        Queue<int[]>queue= new PriorityQueue<>(Comparator.comparingInt(a->dist[a[0]][a[1]]));
-        queue.offer(new int[]{0,0});
-        while(!queue.isEmpty()){
-            int[]pos=queue.poll();
-            int x=pos[0],y=pos[1];
-            for(int[]dir:dirs){
-                int nx=x+dir[0],ny=y+dir[1];
-                if(nx>=0&&nx<m&&ny>=0&&ny<n&&!vis[nx][ny]){
-                    vis[nx][ny]=true;
-                    dist[nx][ny]=dist[x][y]+grid[nx][ny];
-                    queue.offer(new int[]{nx,ny});
+        int[][] dirs = {{-1, 0}, {1, 0}, {0, -1}, {0, 1}};
+        int m = grid.length, n = grid[0].length;
+        int[][] dist = new int[m][n];
+        dist[0][0] = 0;
+        boolean[][] vis = new boolean[m][n];
+        Queue<int[]> queue = new PriorityQueue<>(Comparator.comparingInt(a -> dist[a[0]][a[1]]));
+        queue.offer(new int[]{0, 0});
+        while (!queue.isEmpty()) {
+            int[] pos = queue.poll();
+            int x = pos[0], y = pos[1];
+            for (int[] dir : dirs) {
+                int nx = x + dir[0], ny = y + dir[1];
+                if (nx >= 0 && nx < m && ny >= 0 && ny < n && !vis[nx][ny]) {
+                    vis[nx][ny] = true;
+                    dist[nx][ny] = dist[x][y] + grid[nx][ny];
+                    queue.offer(new int[]{nx, ny});
                 }
             }
 
         }
-        return dist[m-1][n-1];
+        return dist[m - 1][n - 1];
 
     }
 

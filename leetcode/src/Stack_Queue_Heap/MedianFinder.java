@@ -1,5 +1,6 @@
 package Stack_Queue_Heap;
 
+import java.util.Comparator;
 import java.util.PriorityQueue;
 
 class MedianFinder {
@@ -8,7 +9,7 @@ class MedianFinder {
 
     public MedianFinder() {
         queMin = new PriorityQueue<>((a, b) -> (b - a));
-        queMax = new PriorityQueue<>((a, b) -> (a - b));
+        queMax = new PriorityQueue<>(Comparator.comparingInt(a -> a));
     }
 
     public void addNum(int num) {
@@ -34,7 +35,7 @@ class MedianFinder {
     }
 
     public static void main(String[] args) {
-        MedianFinder medianFinder=new MedianFinder();
+        MedianFinder medianFinder = new MedianFinder();
         medianFinder.addNum(1);
         medianFinder.addNum(2);
         medianFinder.addNum(3);

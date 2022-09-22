@@ -1,4 +1,5 @@
 package Graph;
+
 import java.util.*;
 //有 n 个网络节点，标记为?1?到 n。
 //给你一个列表?times，表示信号经过 有向 边的传递时间。?times[i] = (ui, vi, wi)，其中?ui?是源节点，vi?是目标节点， wi?是一个信号从源节点传递到目标节点的时间。
@@ -31,7 +32,7 @@ public class networkDelayTime {
             used[x] = true;
             for (int y = 0; y < n; ++y) {
                 dist[y] = Math.min(dist[y], dist[x] + g[x][y]);
-                System.out.print(dist[y]+" ");
+                System.out.print(dist[y] + " ");
             }
             System.out.println();
         }
@@ -41,10 +42,10 @@ public class networkDelayTime {
     }
 
     public static void main(String[] args) {
-        int[][]time={{2,1,1},{2,3,1},{3,4,1}};
-        int n=4;
-        int k=2;
-        System.out.println(networkDelayTime(time,n,k));
+        int[][] time = {{2, 1, 1}, {2, 3, 1}, {3, 4, 1}};
+        int n = 4;
+        int k = 2;
+        System.out.println(networkDelayTime(time, n, k));
     }
 
 }
