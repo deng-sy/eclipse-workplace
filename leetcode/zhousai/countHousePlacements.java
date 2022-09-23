@@ -9,20 +9,20 @@ import java.util.Arrays;
 //注意，如果一所房子放置在这条街某一侧上的第 i 个地块，不影响在另一侧的第 i 个地块放置房子。
 public class countHousePlacements {
     public static int countHousePlacements(int n) {
-        int mod=1000000007;
-        long[]num=new long[4];
-        Arrays.fill(num,1);
-        while(--n>0){
-            long[]tmp=new long[4];
-            tmp[0]=(num[0]+num[1]+num[2]+num[3])%mod;
-            tmp[1]=(num[0]+num[2])%mod;
-            tmp[2]=(num[0]+num[1])%mod;
-            tmp[3]=num[0]%mod;
-            num=tmp;
+        int mod = 1000000007;
+        long[] num = new long[4];
+        Arrays.fill(num, 1);
+        while (--n > 0) {
+            long[] tmp = new long[4];
+            tmp[0] = (num[0] + num[1] + num[2] + num[3]) % mod;
+            tmp[1] = (num[0] + num[2]) % mod;
+            tmp[2] = (num[0] + num[1]) % mod;
+            tmp[3] = num[0] % mod;
+            num = tmp;
         }
-        long ans=0;
-        for(int i=0;i<4;i++){
-            ans=(ans+num[i])%mod;
+        long ans = 0;
+        for (int i = 0; i < 4; i++) {
+            ans = (ans + num[i]) % mod;
         }
         return (int) ans;
     }

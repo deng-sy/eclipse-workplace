@@ -1,5 +1,9 @@
 package zhousai;
-
+/*
+给你一个下标从 0开始的m x n二进制矩阵mat和一个整数cols，表示你需要选出的列数。
+如果一行中，所有的 1 都被你选中的列所覆盖，那么我们称这一行 被覆盖了。
+请你返回在选择 cols列的情况下，被覆盖的行数 最大为多少。
+ */
 import java.util.*;
 
 public class maximumRows {
