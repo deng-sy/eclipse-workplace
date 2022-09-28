@@ -14,7 +14,6 @@ public class sequenceReconstruction {
     boolean hasCycle = false;
     boolean isSeq = false;
     int[] nums;
-
     public boolean sequenceReconstruction(int[] org, List<List<Integer>> seqs) {
         if (seqs.size() == 0)
             return false;

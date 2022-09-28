@@ -1,16 +1,16 @@
-package fanruan;
-
-import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
-
-// 将使? JUnit5 执?测试
-
-class ShowMeBugTest {
-    @Test
-    void testSolution() {
-        ShowMeBug showMeBug = new ShowMeBug();
-        assertEquals(23, showMeBug.solution("abcescfsadee", 4, "bccfd"));
-        assertEquals(32, showMeBug.solution("abcescfsadee", 4, "esc"));
-    }
-}
+//package fanruan;
+//
+//import org.junit.jupiter.api.Test;
+//import static org.junit.jupiter.api.Assertions.assertEquals;
+//
+//
+//// 将使? JUnit5 执?测试
+//
+//class ShowMeBugTest {
+//    @Test
+//    void testSolution() {
+//        ShowMeBug showMeBug = new ShowMeBug();
+//        assertEquals(23, showMeBug.solution("abcescfsadee", 4, "bccfd"));
+//        assertEquals(32, showMeBug.solution("abcescfsadee", 4, "esc"));
+//    }
+//}
