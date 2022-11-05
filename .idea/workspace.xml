@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bd8d757f-efe8-4f61-92ab-4bb11939cbaa" name="Changes" comment="9-28">
-      <change afterPath="$PROJECT_DIR$/algorithm/bole/maximumSum.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/algorithm/zijie/PackageProblem.java" afterDir="false" />
+    <list default="true" id="bd8d757f-efe8-4f61-92ab-4bb11939cbaa" name="Changes" comment="10-09">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/KotlinJavaRuntime.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/algorithm/bagu/concurrent/FooBar.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/algorithm/jingwei/Test1105.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/algorithm/leetcode/BFS_DFS/minimumJumps.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/algorithm/leetcode/Nums_String/firstMissingPositive.java" beforeDir="false" afterPath="$PROJECT_DIR$/algorithm/leetcode/Nums_String/firstMissingPositive.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/algorithm/leetcode/dyn_pro/partition2.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/algorithm/zhousai/maximumsSplicedArray.java" beforeDir="false" afterPath="$PROJECT_DIR$/algorithm/zhousai/maximumsSplicedArray.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/algorithm/bagu/concurrent/Foo.java" beforeDir="false" afterPath="$PROJECT_DIR$/algorithm/bagu/concurrent/Foo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/algorithm/leetcode/List/isPalindrome.java" beforeDir="false" afterPath="$PROJECT_DIR$/algorithm/leetcode/List/isPalindrome.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/algorithm/yizhifu/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/algorithm/yizhifu/Test.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,6 +20,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Kotlin Class" />
         <option value="Class" />
       </list>
     </option>
@@ -36,33 +40,36 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;ToolWindowGit.ShowToolbar&quot;: &quot;false&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/didi/IdeaProjects/eclipse-workplace/leetcode&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "ToolWindowGit.ShowToolbar": "false",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/Users/didi/IdeaProjects/eclipse-workplace/leetcode",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "File.Encoding"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/leetcode" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
   </component>
-  <component name="RunManager" selected="Application.maximumSum">
-    <configuration name="DataRead" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="honor.DataRead" />
+  <component name="RunManager" selected="Application.Foo (1)">
+    <configuration name="Foo (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="bagu.concurrent.Foo" />
       <module name="eclipse-workplace" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="honor.*" />
+          <option name="PATTERN" value="bagu.concurrent.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -70,12 +77,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MaxNum" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="honor.MaxNum" />
+    <configuration name="Foo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="bagu.concurrent.Foo" />
       <module name="eclipse-workplace" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="honor.*" />
+          <option name="PATTERN" value="bagu.concurrent.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -83,12 +90,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PackageProblem" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="zijie.PackageProblem" />
+    <configuration name="FooBar" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="bagu.concurrent.FooBar" />
       <module name="eclipse-workplace" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="zijie.*" />
+          <option name="PATTERN" value="bagu.concurrent.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -96,12 +103,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PathFind" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="honor.PathFind" />
+    <configuration name="PrintAB1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="bagu.concurrent.PrintAB1" />
       <module name="eclipse-workplace" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="honor.*" />
+          <option name="PATTERN" value="bagu.concurrent.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -109,12 +116,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="maximumSum" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="bole.maximumSum" />
+    <configuration name="PrintAB2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="bagu.concurrent.PrintAB2" />
       <module name="eclipse-workplace" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="bole.*" />
+          <option name="PATTERN" value="bagu.concurrent.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -124,11 +131,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.maximumSum" />
-        <item itemvalue="Application.PackageProblem" />
-        <item itemvalue="Application.MaxNum" />
-        <item itemvalue="Application.PathFind" />
-        <item itemvalue="Application.DataRead" />
+        <item itemvalue="Application.Foo (1)" />
+        <item itemvalue="Application.Foo" />
+        <item itemvalue="Application.FooBar1" />
+        <item itemvalue="Application.PrintAB1" />
+        <item itemvalue="Application.PrintAB2" />
       </list>
     </recent_temporary>
   </component>
@@ -146,7 +153,9 @@
       <workItem from="1663913881957" duration="4264000" />
       <workItem from="1664183518610" duration="20697000" />
       <workItem from="1664333128807" duration="268000" />
-      <workItem from="1664361152517" duration="13787000" />
+      <workItem from="1664361152517" duration="14893000" />
+      <workItem from="1665730495795" duration="1357000" />
+      <workItem from="1667386973458" duration="13490000" />
     </task>
     <task id="LOCAL-00001" summary="9-7">
       <created>1662538896324</created>
@@ -183,7 +192,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664362387627</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="10-09">
+      <created>1665302982045</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1665302982045</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -204,7 +220,8 @@
     <MESSAGE value="9-7" />
     <MESSAGE value="9-19" />
     <MESSAGE value="9-28" />
-    <option name="LAST_COMMIT_MESSAGE" value="9-28" />
+    <MESSAGE value="10-09" />
+    <option name="LAST_COMMIT_MESSAGE" value="10-09" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

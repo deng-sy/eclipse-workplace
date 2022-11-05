@@ -1,11 +1,14 @@
 package yizhifu;
 
 class Father {
+    String name;
+
     public static void static_method() {
         System.out.println("static method of father");
     }
 
     public Father() {
+        this.name = "father";
         System.out.println("father");
     }
 
@@ -20,6 +23,7 @@ class Son extends Father {
     }
 
     public Son() {
+        this.name = "son";
         System.out.println("son");
     }
 
@@ -31,6 +35,7 @@ class Son extends Father {
 public class Test {
     public static void main(String[] args) {
         Father father = new Son();
+        System.out.println(father.name);
         father.static_method();
     }
 }
